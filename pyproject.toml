@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moroccan-nlp"
+version = "1.0.0"
+description = "Linguistic Resources and Models for Moroccan Darija and Arabic"
+readme = "README.md"
+authors = [{name = "Samir Baladi", email = "gitdeeper@gmail.com"}]
+license = {text = "MIT"}
+requires-python = ">=3.11"
+keywords = ["morocco", "darija", "nlp", "arabic", "natural-language-processing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+    "requests>=2.31.0",
+    "simplejson>=3.19.0",
+    "transformers>=4.30.0",
+    "torch>=2.0.0"
+]
+
+[project.urls]
+Documentation = "https://moroccan-nlp.netlify.app/documentation"
+Source = "https://github.com/gitdeeper13/moroccan_nlp"
+DOI = "https://doi.org/10.5281/zenodo.21154423"
+
+[tool.setuptools]
+packages = []
+include-package-data = false

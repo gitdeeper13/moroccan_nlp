@@ -1,0 +1,515 @@
+{
+  "total_claims": 38,
+  "aligned_claims": 0,
+  "aligned_refs": [],
+  "unaligned_refs": [
+    {
+      "id": 1,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Younes Samih, Wolfgang Maier (2016). An Arabic-Moroccan Darija Code-Switched Corpus. CrossRef. https..."
+    },
+    {
+      "id": 2,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Elabbas Benmamoun (1997). Licensing of Negative Polarity Items in Moroccan Arabic. CrossRef. https:/..."
+    },
+    {
+      "id": 3,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Ann Bies, Denise DiPersio, Mohamed Maamouri (2012). Linguistic resources for Arabic machine translat..."
+    },
+    {
+      "id": 4,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Wafa Abdullah Alrajhi, Hend Al-Khalifa, Abdulmalik AlSalman (2022). Assessing the Linguistic Knowled..."
+    },
+    {
+      "id": 5,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "H\u00e9la Fehri (2024). Towards a More Efficient Arabic-French Translation. CrossRef. https://doi.org/10...."
+    },
+    {
+      "id": 6,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Ibtissam Kortobi (2002). Gapping and VP-Deletion in Moroccan Arabic. CrossRef. https://doi.org/10.10..."
+    },
+    {
+      "id": 7,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Yuras Hetsevich, Mikita Suprunchuk (2024). Linguistic Resources and Methods for Belarusian Natural L..."
+    },
+    {
+      "id": 8,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Yasmeen Bassas, Sandra K\u00fcbler (2024). Investigating Linguistic Features for Arabic NLI. CrossRef. ht..."
+    },
+    {
+      "id": 9,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Abdullah Khered, Ingy Abdelhalim Abdelhalim, Riza Batista-Navarro (2022). Building an Ensemble of Tr..."
+    },
+    {
+      "id": 10,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Lionel Cl\u00e9ment (2024). Linguistic Resources for the Automatic Generation of Texts in Natural Languag..."
+    },
+    {
+      "id": 11,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Wafia Adouane, Richard Johansson (2016). Gulf Arabic Linguistic Resource Building for Sentiment Anal..."
+    },
+    {
+      "id": 12,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Cilia Lachichi, Chahrazad Bendiaf, Lamia Berkani (2018). An Arabic WordNet enrichment approach using..."
+    },
+    {
+      "id": 13,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Unknown (None). Moroccan Arabic. CrossRef. https://doi.org/10.1163/1570-6699_eall_eall_com_vol3_0220..."
+    },
+    {
+      "id": 14,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Mohamed Hannani, Abdelhadi Soudi, Kristof Van Laerhoven (2024). Assessing the Performance of ChatGPT..."
+    },
+    {
+      "id": 15,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Ahmed El-Shangiti, Fakhraddin Alwajih, Muhammad Abdul-Mageed (2024). Arabic Automatic Story Generati..."
+    },
+    {
+      "id": 16,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Mamoun Alghaslan, Khaled Almutairy (2024). MGKM at StanceEval2024 Fine-Tuning Large Language Models ..."
+    },
+    {
+      "id": 17,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Unknown (2024). Linguistic Resources for Natural Language Processing. CrossRef. https://doi.org/10.1..."
+    },
+    {
+      "id": 18,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Somar Bilal (2021). A Linguistic System for Predicting Sentiment in Arabic Tweets. CrossRef. https:/..."
+    },
+    {
+      "id": 19,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Abderrahman Skiredj, Ferdaous Azhari, Ismail Berrada (2024). DarijaBanking: A new resource for overc..."
+    },
+    {
+      "id": 20,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Mostafa Saeed, Nizar Habash (2025). Lemmatizing Dialectal Arabic with Sequence-to-Sequence Models. C..."
+    },
+    {
+      "id": 21,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Olena Saint-Joanis (2024). A New Set of Linguistic Resources for Ukrainian. CrossRef. https://doi.or..."
+    },
+    {
+      "id": 22,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Unknown (2016). A Step Toward Sub-symbolic Language Models without Linguistic Representations. Cross..."
+    },
+    {
+      "id": 23,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Atiqa Hachimi (2001). Arabic. Shifting sands. CrossRef. https://doi.org/10.1075/impact.9.06hac..."
+    },
+    {
+      "id": 24,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Luc\u00eda Catal\u00e1n Gris, Kim Gerdes, John S. Y. Lee (2026). The Linguist\u2019s Lie Detector: Linguistic Knowl..."
+    },
+    {
+      "id": 25,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Pawan Rajpoot, Ashvini Jindal, Ankur Parikh (2024). Upaya at ArabicNLU Shared-Task: Arabic Lexical D..."
+    },
+    {
+      "id": 26,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Reem Abdel-Salam (2024). rematchka at ArabicNLU2024: Evaluating Large Language Models for Arabic Wor..."
+    },
+    {
+      "id": 27,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Gaurav Singh (2022). AraProp at WANLP 2022 Shared Task: Leveraging Pre-Trained Language Models for A..."
+    },
+    {
+      "id": 28,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Mohamed Aghzal, Mohamed Amine El Bouni, Saad Driouech (2023). Compact Transformer-based Language Mod..."
+    },
+    {
+      "id": 29,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Unknown (2013). Moroccan Arabic in the European Diaspora. CrossRef. https://doi.org/10.4324/97802030..."
+    },
+    {
+      "id": 30,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Rabia Redouane (2024). Debate over the Use of Mother Tongue Moroccan Arabic (Darija) in Early Instru..."
+    },
+    {
+      "id": 31,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Sumaya Sulaiman Al Ameri, Abdulhadi Shoufan (2021). Building Lexical Resources for Dialectical Arabi..."
+    },
+    {
+      "id": 32,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Reem AlYami, Rabah Al-Zaidy (2022). Weakly and Semi-Supervised Learning for Arabic Text Classificati..."
+    },
+    {
+      "id": 33,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Essia Bessaies, Slim Mesfar, Henda Ben Ghezala (2017). Generating Answering Patterns from Factoid Ar..."
+    },
+    {
+      "id": 34,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Ishaan Shukla, Ankit Vaidya, Geetanjali Kale (2024). PICT at StanceEval2024: Stance Detection in Ara..."
+    },
+    {
+      "id": 35,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Christian Chiarcos, Steven Moran, Pablo N. Mendes (2013). Building a Linked Open Data Cloud of Lingu..."
+    },
+    {
+      "id": 36,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Fatiha Sadat, Fatma Mallek, Mohamed Boudabous (2014). Collaboratively Constructed Linguistic Resourc..."
+    },
+    {
+      "id": 37,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Soufiyan Ouali, Kanza Raisi, Asmaa Mourhir (2026). Adversarial Evaluation of Large Language Models f..."
+    },
+    {
+      "id": 38,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Ian Campbell (2013). 1 Conditions and Preconditions of the Arabic-Language Moroccan Novel. CrossRef...."
+    },
+    {
+      "id": 39,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Utz Maas, Stephan Proch\u00e1zka (2012). Moroccan Arabic in its wider linguistic and social contexts. Cro..."
+    },
+    {
+      "id": 40,
+      "domain_score": 0.0,
+      "is_irrelevant": false,
+      "text": "Joseph Attieh, Fadi Hassan (2022). Arabic Dialect Identification and Sentiment Classification using ..."
+    }
+  ],
+  "details": [
+    {
+      "claim": "Effective NLP processing can enhance language proficiency, promote digital literacy, and support the development of language-based technologies.",
+      "section": "Introduction",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Section 4 discusses the implications of the results and provides recommendations for future research.",
+      "section": "Introduction",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Variables and Evaluation Metrics**\n\n| Variable | Role | Value (unit) |\n| --- | --- | --- |\n| Code-Switching Detection | TARGET | 0.65 |\n| Darija Language Model | Core System | 0.85 |\n| Moroccan Dialect Corpus | Dataset | 0.9 |\n| Sentiment Analysis Model | Validator | 0.75 |\n| Named Entity Recognition | Evaluator | 0.7 |\n| Arabic-Darija Translation | Core System | 0.88 |\n\nEvaluation Metrics:\n\n* R\u00b2 (coefficient of determination)\n* RMSE (root mean squared error)\n* MAE (mean absolute error)\n* MAPE (mean absolute percentage error)\n\n**HYPOTHESIS**\n\n[HYPOTHESIS] The development of tailored NLP models for Darija and Arabic, along with comprehensive linguistic resources, will significantly improve the accuracy of NLP applications in Morocco, leading to enhanced language proficiency and digital literacy.",
+      "section": "Introduction",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "We develop tailored NLP models and comprehensive linguistic resources to improve the accuracy of NLP applications in Morocco.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Our results demonstrate significant improvements in code-switching detection, sentiment analysis, and named entity recognition.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "### 3.3 Estimation Strategy\n\nWe use a regression approach to estimate the accuracy of our NLP models.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "We evaluate the performance of our models using four evaluation metrics: R\u00b2 (coefficient of determination), RMSE (root mean squared error), MAE (mean absolute error), and MAPE (mean absolute percentage error).",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "### 3.4 Evaluation Metrics\n\n| Variable | Role | Value (unit) |\n| --- | --- | --- |\n| Code-Switching Detection | TARGET | 0.65 |\n| Darija Language Model | Core System | 0.85 |\n| Moroccan Dialect Corpus | Dataset | 0.9 |\n| Sentiment Analysis Model | Validator | 0.75 |\n| Named Entity Recognition | Evaluator | 0.7 |\n| Arabic-Darija Translation | Core System | 0.88 |\n\nEvaluation Metrics:\n\n* R\u00b2 (coefficient of determination): 0.85\n* RMSE (root mean squared error): 0.12\n* MAE (mean absolute error): 0.08\n* MAPE (mean absolute percentage error): 0.15\n\n**Results**\n\nOur results demonstrate significant improvements in code-switching detection, sentiment analysis, and named entity recognition.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The DLM achieves an accuracy of 0.85, while the ADT model achieves an accuracy of 0.88.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The SAM and NER models achieve accuracies of 0.75 and 0.7, respectively.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The results demonstrate the effectiveness of tailored NLP models and comprehensive linguistic resources in improving the accuracy of NLP applications.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Conclusion**\n\nThis study demonstrates the importance of developing tailored NLP models and comprehensive linguistic resources for Darija and Arabic.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Our results contribute to the advancement of NLP research in Morocco and provide a foundation for future studies in this area.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**HYPOTHESIS**\n\n[HYPOTHESIS] The development of tailored NLP models for Darija and Arabic, along with comprehensive linguistic resources, will significantly improve the accuracy of NLP applications in Morocco, leading to enhanced language proficiency and digital literacy.",
+      "section": "Methodology",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Section 4: Results**\n\n### 4.1 Descriptive Statistics\n\n| Variable | Unit | Mean | Standard Deviation | Range |\n| --- | --- | --- | --- | --- |\n| Code-Switching Detection | % | 65.12 | 10.45 | 50-80 |\n| Darija Language Model | - | 0.85 | 0.03 | 0.80-0.90 |\n| Moroccan Dialect Corpus | - | 0.90 | 0.02 | 0.85-0.95 |\n| Sentiment Analysis Model | - | 0.75 | 0.05 | 0.65-0.85 |\n| Named Entity Recognition | - | 0.70 | 0.07 | 0.55-0.85 |\n| Arabic-Darija Translation | - | 0.88 | 0.04 | 0.80-0.95 |\n\n### 4.2 Model Performance\n\n| Model | R\u00b2 | RMSE | MAE | MAPE | 95% CI |\n| --- | --- | --- | --- | --- | --- |\n| Code-Switching Detection | 0.65 | 12.45 | 8.21 | 10.12 | (0.59, 0.71) |\n| Darija Language Model | 0.85 | 4.21 | 2.51 | 3.12 | (0.81, 0.89) |\n| Moroccan Dialect Corpus | 0.90 | 3.21 | 1.85 | 2.21 | (0.87, 0.93) |\n| Sentiment Analysis Model | 0.75 | 6.45 | 4.21 | 5.12 | (0.69, 0.81) |\n| Named Entity Recognition | 0.70 | 7.21 | 5.12 | 6.12 | (0.63, 0.77) |\n| Arabic-Darija Translation | 0.88 | 5.12 | 3.21 | 4.12 | (0.84, 0.92) |\n\n### 4.3 Variable Importance\n\n| Variable | Importance Score |\n| --- | --- |\n| Darija Language Model | 0.32 |\n| Moroccan Dialect Corpus | 0.25 |\n| Sentiment Analysis Model | 0.20 |\n| Named Entity Recognition | 0.15 |\n| Arabic-Darija Translation | 0.08 |\n| Code-Switching Detection | 0.00 |\n\n### 4.4 Sensitivity Analysis\n\nThe results of the sensitivity analysis indicate that the Darija Language Model and Moroccan Dialect Corpus have a significant impact on the accuracy of the NLP applications, with a 95% CI of (0.81, 0.89) and (0.87, 0.93), respectively.",
+      "section": "Results",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Conclusion**\n\nThe results of this study demonstrate the effectiveness of tailored NLP models and comprehensive linguistic resources in improving the accuracy of NLP applications in Morocco.",
+      "section": "Results",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The Darija Language Model and Moroccan Dialect Corpus are found to be the most important variables in determining the accuracy of the NLP applications, with a 95% CI of (0.81, 0.89) and (0.87, 0.93), respectively.",
+      "section": "Results",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "These findings support our hypothesis that the development of tailored NLP models for Darija and Arabic, along with comprehensive linguistic resources, will significantly improve the accuracy of NLP applications in Morocco, leading to enhanced language proficiency and digital literacy.",
+      "section": "Results",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Discussion**\n\n**(a) Interpretation of Results**\n\nOur analysis reveals that the Darija Language Model (0.85) and the Moroccan Dialect Corpus (0.9) are the primary drivers of the effectiveness of NLP applications in Morocco, with a 95% CI of (0.81, 0.89) and (0.87, 0.93), respectively.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "These findings suggest that the development of tailored NLP models for Darija and Arabic, along with comprehensive linguistic resources, is crucial for improving the accuracy of NLP applications in Morocco.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The R\u00b2 value of 0.85 indicates that approximately 85% of the variability in the Code-Switching Detection can be explained by the Darija Language Model and the Moroccan Dialect Corpus.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The RMSE of 0.15 and MAE of 0.12 suggest that the average difference between the predicted and actual values is relatively small.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "However, the MAPE of 0.25 indicates that the average absolute percentage error is relatively high, suggesting that there is still room for improvement.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**(b) Comparison with Prior Literature**\n\nOur results are consistent with prior studies that have demonstrated the importance of developing tailored NLP models for specific languages and dialects (Kittler et al., 2018; Zhang et al., 2020).",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The findings also support the idea that comprehensive linguistic resources are essential for improving the accuracy of NLP applications (Bouamor et al., 2019).",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "However, our study provides novel insights into the specific role of the Darija Language Model and the Moroccan Dialect Corpus in determining the accuracy of NLP applications in Morocco.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**(c) Policy Implications**\n\nOur results have significant policy implications for the development of NLP applications in Morocco.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The findings suggest that investing in the development of tailored NLP models for Darija and Arabic, along with comprehensive linguistic resources, would be a valuable strategy for improving the accuracy of NLP applications in Morocco.",
+      "section": "Discussion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Our results show that a Darija language model achieves a high accuracy of 0.85, while a Moroccan dialect corpus reaches a dataset quality of 0.9.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "The sentiment analysis model and named entity recognition models exhibit moderate performance, with accuracy values of 0.75 and 0.7, respectively.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Moreover, our Arabic-Darija translation model achieves a high accuracy of 0.88.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Notably, code-switching detection reaches a moderate accuracy of 0.65.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Additionally, our study demonstrates the potential of NLP techniques for processing Moroccan Darija and Arabic, which can be leveraged to improve language proficiency and digital literacy.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Integrate NLP techniques into language education**: Our findings suggest that NLP techniques can be leveraged to improve language proficiency and digital literacy.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "We recommend integrating NLP techniques into language education to enhance language learning outcomes.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Develop more advanced NLP models for Moroccan Darija and Arabic**: Our study demonstrates the potential of NLP techniques for processing Moroccan Darija and Arabic.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "**Explore the use of NLP techniques for code-switching detection**: Our study shows that code-switching detection reaches a moderate accuracy of 0.65.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    },
+    {
+      "claim": "Assessing the Performance of ChatGPT-4, Fine-tuned BERT and Traditional ML Models on Moroccan Arabic Sentiment Analysis.",
+      "section": "Conclusion",
+      "citations": [],
+      "aligned_refs": [],
+      "aligned": false
+    }
+  ]
+}

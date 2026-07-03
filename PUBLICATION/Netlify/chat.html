@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moroccan_nlp - دردشة بالدارجة المغربية</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        :root {
+            --primary-color: hsl(215.0, 68.5%, 54.8%);
+            --secondary-color: hsl(255.0, 58.5%, 59.8%);
+            --accent-color: hsl(240.0, 68.5%, 62.8%);
+            --dark-bg: hsl(0, 0%, 8%);
+            --text-light: #f5f5dc;
+            --chat-bg: rgba(255,255,255,0.05);
+            --user-msg: rgba(0, 100, 200, 0.3);
+            --bot-msg: rgba(255,255,255,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .navbar {
+            background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--text-light); text-decoration: none; }
+        .logo span { color: var(--accent-color); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+        main { padding-top: 80px; min-height: calc(100vh - 300px); }
+
+        .hero {
+            background: rgba(0,0,0,0.3);
+            padding: 40px 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .badge {
+            background: rgba(255,255,255,0.1);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid var(--accent-color);
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: transform 0.2s, background 0.3s;
+        }
+        .btn:hover { transform: scale(1.05); background: hsl(240.0, 68.5%, 72.8%); }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--text-light);
+        }
+        .btn-outline:hover { background: var(--accent-color); color: var(--dark-bg); }
+
+        .chat-container {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 10px;
+        }
+        .chat-header h3 { color: var(--accent-color); }
+        .chat-header button {
+            background: rgba(255,0,0,0.2);
+            border: 1px solid rgba(255,0,0,0.3);
+            color: #ff6b6b;
+            padding: 6px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.8rem;
+        }
+        .chat-header button:hover { background: rgba(255,0,0,0.3); }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .chat-messages::-webkit-scrollbar { width: 6px; }
+        .chat-messages::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
+        .chat-messages::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease;
+        }
+        .message.user {
+            align-self: flex-end;
+            background: var(--user-msg);
+            border-bottom-right-radius: 4px;
+            border: 1px solid rgba(0, 100, 200, 0.2);
+        }
+        .message.bot {
+            align-self: flex-start;
+            background: var(--bot-msg);
+            border-bottom-left-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .message .time {
+            font-size: 0.65rem;
+            opacity: 0.5;
+            margin-top: 5px;
+            display: block;
+        }
+        .message .typing-indicator {
+            display: inline-block;
+            animation: typing 1.2s infinite;
+        }
+        @keyframes typing {
+            0%, 60%, 100% { opacity: 0.3; }
+            30% { opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 12px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.3);
+            color: var(--text-light);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .chat-input input:focus { border-color: var(--accent-color); }
+        .chat-input input::placeholder { color: rgba(255,255,255,0.4); }
+        .chat-input input:disabled { opacity: 0.5; }
+        .chat-input button {
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            background: var(--accent-color);
+            color: var(--dark-bg);
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+        .chat-input button:hover { transform: scale(1.03); background: hsl(240.0, 68.5%, 72.8%); }
+        .chat-input button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        .info-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .info-card h3 { color: var(--accent-color); margin-bottom: 10px; }
+
+        .footer {
+            background: var(--dark-bg);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 60px;
+            border-top: 3px solid var(--accent-color);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.8; font-size: 0.9rem; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .message { max-width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">💻 <span>moroccan_nlp</span></a>
+            <ul class="nav-links">
+                <li><a href="https://moroccan-nlp.netlify.app/">🏠 Home</a></li>
+                <li><a href="https://moroccan-nlp.netlify.app/dashboard.html">📊 Dashboard</a></li>
+                <li><a href="https://moroccan-nlp.netlify.app/reports.html">📄 Reports</a></li>
+                <li><a href="https://moroccan-nlp.netlify.app/documentation.html">📚 Documentation</a></li>
+                <li><a href="https://moroccan-nlp.netlify.app/chat.html" class="active">💬 Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="badge">🤖 بناء الذكاء الاصطناعي المغربي</div>
+            <h1>دعوة مفتوحة للمشاركة</h1>
+            <p class="subtitle">انضم إلينا في بناء نماذج لغوية مغربية متقدمة للدارجة</p>
+            <div style="margin-top:20px;">
+                <a href="https://github.com/gitdeeper13/moroccan_nlp" target="_blank" class="btn">🐙 المساهمة على GitHub</a>
+                <a href="https://huggingface.co/SI2M-Lab/DarijaBERT" target="_blank" class="btn btn-outline">🤗 استكشف النماذج</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>📊 شارك بالبيانات</h3>
+                    <p>ساهم بجمع وتنقية نصوص بالدارجة المغربية من مصادر مختلفة.</p>
+                    <a href="https://github.com/gitdeeper13/moroccan_nlp/issues" target="_blank" style="color: var(--accent-color);">→ تعرف على المزيد</a>
+                </div>
+                <div class="info-card">
+                    <h3>🧠 طوّر النماذج</h3>
+                    <p>ساهم في تطوير نماذج ذكاء اصطناعي للدارجة (تحليل مشاعر، ترجمة، محادثة).</p>
+                    <a href="https://github.com/gitdeeper13/moroccan_nlp" target="_blank" style="color: var(--accent-color);">→ شارك الآن</a>
+                </div>
+                <div class="info-card">
+                    <h3>📝 وثق البحث</h3>
+                    <p>شارك في توثيق الأبحاث والموارد اللغوية للدارجة المغربية.</p>
+                    <a href="https://doi.org/10.5281/zenodo.21154423" target="_blank" style="color: var(--accent-color);">→ اطلع على الأبحاث</a>
+                </div>
+                <div class="info-card">
+                    <h3>🌐 انضم للمجتمع</h3>
+                    <p>تواصل مع الباحثين والمطورين المهتمين بالدارجة والذكاء الاصطناعي.</p>
+                    <a href="mailto:gitdeeper@gmail.com" style="color: var(--accent-color);">→ تواصل معنا</a>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>💬 نموذج توضيحي: دردشة بالدارجة</h3>
+                <p>جرب نموذج <strong>Atlas-Chat-2B</strong> المتخصص في الدارجة المغربية. هذه مجرد عينة بسيطة من إمكانيات النماذج التي نبنيها معاً.</p>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3>💬 دارجةBot</h3>
+                    <button id="clearBtn">🗑️ مسح المحادثة</button>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot">
+                        <strong>🤖 دارجةBot:</strong>
+                        <span>سلام عليكم! 😊 أنا نموذج توضيحي لقدرات الذكاء الاصطناعي في فهم الدارجة المغربية. كيفاش نقدر نعاونك اليوم؟</span>
+                        <span class="time">الآن</span>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="اكتب سؤالك بالدارجة هنا..." />
+                    <button id="sendBtn">إرسال ➤</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>🔬 moroccan_nlp</h3>
+                <p>Linguistic Resources and Models for Moroccan Darija and Arabic</p>
+                <p style="margin-top:0.5rem; font-size:0.9rem;">Version 1.0.0 · MIT License</p>
+                <p style="font-size:0.85rem; opacity:0.8;">
+                    DOI: <a href="https://doi.org/10.5281/zenodo.21154423" style="color: var(--accent-color);">10.5281/zenodo.21154423</a>
+                </p>
+                <p style="font-size:0.85rem; opacity:0.8;">
+                    ORCID: <a href="https://orcid.org/0009-0003-8903-0029" style="color: var(--accent-color);">0009-0003-8903-0029</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://moroccan-nlp.netlify.app/">🏠 Home</a></li>
+                    <li><a href="https://moroccan-nlp.netlify.app/dashboard.html">⚙️ Dashboard</a></li>
+                    <li><a href="https://moroccan-nlp.netlify.app/reports.html">📊 Reports</a></li>
+                    <li><a href="https://moroccan-nlp.netlify.app/documentation.html">📚 Documentation</a></li>
+                    <li><a href="https://moroccan-nlp.netlify.app/chat.html">💬 Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Code Repositories</h3>
+                <ul>
+                    <li><a href="https://github.com/gitdeeper13/moroccan_nlp" target="_blank">🐙 GitHub (Primary) ↗</a></li>
+                    <li><a href="https://gitlab.com/gitdeeper/moroccan-nlp" target="_blank">🦊 GitLab (Mirror) ↗</a></li>
+                    <li><a href="https://bitbucket.org/gitdeeper-13/moroccan_nlp" target="_blank">🪣 Bitbucket ↗</a></li>
+                    <li><a href="https://codeberg.org/gitdeeper13/moroccan_nlp" target="_blank">🏔️ Codeberg ↗</a></li>
+                    <li><a href="https://pypi.org/project/moroccan-nlp/" target="_blank">🐍 PyPI Package ↗</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://doi.org/10.5281/zenodo.21154423" target="_blank">📄 Research Paper ↗</a></li>
+                    <li><a href="https://doi.org/10.5281/zenodo.21154423" target="_blank">📊 Zenodo Archive ↗</a></li>
+                    <li><a href="https://doi.org/10.17605/OSF.IO/AN2HV" target="_blank">📋 OSF Registration ↗</a></li>
+                    <li><a href="https://orcid.org/0009-0003-8903-0029" target="_blank">👤 ORCID Profile ↗</a></li>
+                    <li><a href="mailto:gitdeeper@gmail.com">✉️ Contact Author</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © moroccan_nlp 🏙 2026 | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================================
+        // 1. CONFIGURATION
+        // ============================================================
+        const HF_TOKEN = "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";
+        const HF_MODEL = "MBZUAI-Paris/Atlas-Chat-2B";
+
+        // ============================================================
+        // 2. CONVERSATION HISTORY
+        // ============================================================
+        let conversationHistory = [];
+
+        // ============================================================
+        // 3. DOM ELEMENTS
+        // ============================================================
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        let isProcessing = false;
+
+        // ============================================================
+        // 4. HELPER FUNCTIONS
+        // ============================================================
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = `
+                <strong>${sender === 'user' ? 'أنت:' : '🤖 دارجةBot:'}</strong>
+                <span>${text}</span>
+                <span class="time">${new Date().toLocaleTimeString('ar-MA', { hour: '2-digit', minute: '2-digit' })}</span>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            conversationHistory.push({ role: sender, content: text });
+            if (conversationHistory.length > 10) {
+                conversationHistory = conversationHistory.slice(-10);
+            }
+        }
+
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <strong>🤖 دارجةBot:</strong>
+                <span class="typing-indicator">يكتب...</span>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        // ============================================================
+        // 5. API CALL (NO HARDCODED RESPONSES)
+        // ============================================================
+        async function getBotResponse(userMessage) {
+            try {
+                const context = conversationHistory.slice(-4).map(msg => 
+                    `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}`
+                ).join('\n');
+                
+                const prompt = context ? `${context}\nUser: ${userMessage}\nAssistant:` : `User: ${userMessage}\nAssistant:`;
+
+                const response = await fetch(
+                    `https://api-inference.huggingface.co/models/${HF_MODEL}`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${HF_TOKEN}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            inputs: prompt,
+                            parameters: {
+                                max_new_tokens: 200,
+                                return_full_text: false,
+                                temperature: 0.3,
+                                top_p: 0.85,
+                                do_sample: true,
+                                repetition_penalty: 1.1,
+                                stop: ["User:", "Assistant:"]
+                            }
+                        })
+                    }
+                );
+
+                if (!response.ok) {
+                    if (response.status === 503) {
+                        return "⚠️ النموذج قيد التحميل. حاول مرة أخرى بعد دقيقة.";
+                    }
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                if (data && data[0] && data[0].generated_text) {
+                    let reply = data[0].generated_text.trim();
+                    // إزالة أي تكرارات
+                    const lines = reply.split('\n').filter(line => line.trim());
+                    reply = lines.join(' ');
+                    return reply || "عذراً، لم أستطع معالجة طلبك.";
+                } else {
+                    return "عذراً، لم أستطع معالجة طلبك.";
+                }
+            } catch (error) {
+                console.error('API Error:', error);
+                return "عذراً، حدث خطأ في الاتصال. حاول مرة أخرى.";
+            }
+        }
+
+        // ============================================================
+        // 6. SEND MESSAGE
+        // ============================================================
+        async function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text || isProcessing) return;
+
+            isProcessing = true;
+            userInput.disabled = true;
+            sendBtn.disabled = true;
+
+            addMessage(text, 'user');
+            userInput.value = '';
+            showTyping();
+
+            try {
+                const reply = await getBotResponse(text);
+                removeTyping();
+                addMessage(reply, 'bot');
+            } catch (error) {
+                removeTyping();
+                addMessage("عذراً، حدث خطأ. حاول مرة أخرى.", 'bot');
+            }
+
+            isProcessing = false;
+            userInput.disabled = false;
+            sendBtn.disabled = false;
+            userInput.focus();
+        }
+
+        // ============================================================
+        // 7. CLEAR CHAT
+        // ============================================================
+        function clearChat() {
+            const messages = chatMessages.querySelectorAll('.message');
+            messages.forEach((msg, index) => {
+                if (index > 0) msg.remove();
+            });
+            removeTyping();
+            conversationHistory = [];
+            isProcessing = false;
+            userInput.disabled = false;
+            sendBtn.disabled = false;
+            userInput.focus();
+        }
+
+        // ============================================================
+        // 8. EVENTS
+        // ============================================================
+        sendBtn.addEventListener('click', sendMessage);
+        userInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+        clearBtn.addEventListener('click', clearChat);
+
+        window.addEventListener('load', () => userInput.focus());
+    </script>
+</body>
+</html>

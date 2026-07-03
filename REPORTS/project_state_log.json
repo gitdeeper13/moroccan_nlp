@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-07-02T09:08:13.828517",
+  "project": "/storage/emulated/0/Download/GITDEEPER_LAB_ZERO_V6/PROJECTS/EXPERIMENTAL/moroccan_nlp",
+  "current_stage": "EXPERIMENTAL",
+  "new_stage": "EXPERIMENTAL",
+  "composite_score": 71.5435,
+  "action": "REJECT",
+  "scope": "BLOCKED",
+  "zone": "INVALID",
+  "confidence": 0.1,
+  "review_required": true,
+  "signals": {
+    "truth_score": 74.17,
+    "calibrated": 74.17,
+    "audit_score": 43.0,
+    "agents_score": 100.0,
+    "human_approval": false,
+    "archive_signal": false,
+    "days_inactive": 0.0,
+    "data_source": "SQLite (lab_data.db)"
+  }
+}

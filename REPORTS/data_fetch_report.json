@@ -1,0 +1,18 @@
+{
+  "project": "moroccan_nlp",
+  "database": "/storage/emulated/0/Download/GITDEEPER_LAB_ZERO_V6/DATA/lab_data.db",
+  "version": "V3-universal-dynamic",
+  "total_entities": 6,
+  "updated": 0,
+  "failed": 6,
+  "updated_entities": [],
+  "failed_entities": [
+    "Darija Language Model",
+    "Moroccan Dialect Corpus",
+    "Sentiment Analysis Model",
+    "Named Entity Recognition",
+    "Code-Switching Detection",
+    "Arabic-Darija Translation"
+  ],
+  "api_indicators_fetched": 27
+}

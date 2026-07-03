@@ -1,0 +1,231 @@
+{
+  "timestamp": "2026-07-02T09:03:33.772659",
+  "project": {
+    "name": "moroccan_nlp",
+    "domain": "computer_science",
+    "stage": "EXPERIMENTAL",
+    "truth_score": 74.17
+  },
+  "summary": {
+    "total_pii_found": 2659,
+    "total_risks": 3,
+    "total_recommendations": 4,
+    "overall_risk_level": "HIGH"
+  },
+  "pii_findings": [
+    {
+      "type": "name",
+      "value": "Younes Samih",
+      "source": "references",
+      "context": "## References  ## References  [1] Younes Samih, Wolfgang Maier (2016). An Arabic-Moroccan Darija",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Wolfgang Maier",
+      "source": "references",
+      "context": "## References  ## References  [1] Younes Samih, Wolfgang Maier (2016). An Arabic-Moroccan Darija Cod...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "An Arabic",
+      "source": "references",
+      "context": "erences  [1] Younes Samih, Wolfgang Maier (2016). An Arabic-Moroccan Darija Code-Switched Corpus. Cr...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Moroccan Darija Code",
+      "source": "references",
+      "context": "1] Younes Samih, Wolfgang Maier (2016). An Arabic-Moroccan Darija Code-Switched Corpus. CrossRef. ht...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Switched Corpus",
+      "source": "references",
+      "context": "gang Maier (2016). An Arabic-Moroccan Darija Code-Switched Corpus. CrossRef. https://doi.org/10.6331...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Elabbas Benmamoun",
+      "source": "references",
+      "context": "ossRef. https://doi.org/10.63317/2j9smzi3aevg [2] Elabbas Benmamoun (1997). Licensing of Negative Po...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Licensing of Negative Polarity",
+      "source": "references",
+      "context": ".63317/2j9smzi3aevg [2] Elabbas Benmamoun (1997). Licensing of Negative Polarity Items in Moroccan A...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Items in Moroccan Arabic",
+      "source": "references",
+      "context": " Benmamoun (1997). Licensing of Negative Polarity Items in Moroccan Arabic. CrossRef. https://doi.or...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Ann Bies",
+      "source": "references",
+      "context": "sRef. https://doi.org/10.1023/a:1005727101758 [3] Ann Bies, Denise DiPersio, Mohamed Maamouri (2012)...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Denise DiPersio",
+      "source": "references",
+      "context": "s://doi.org/10.1023/a:1005727101758 [3] Ann Bies, Denise DiPersio, Mohamed Maamouri (2012). Linguist...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Mohamed Maamouri",
+      "source": "references",
+      "context": "23/a:1005727101758 [3] Ann Bies, Denise DiPersio, Mohamed Maamouri (2012). Linguistic resources for ...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Linguistic resources for Arabic",
+      "source": "references",
+      "context": "n Bies, Denise DiPersio, Mohamed Maamouri (2012). Linguistic resources for Arabic machine translatio...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "machine translation",
+      "source": "references",
+      "context": " Maamouri (2012). Linguistic resources for Arabic machine translation. CrossRef. https://doi.org/10....",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Wafa Abdullah Alrajhi",
+      "source": "references",
+      "context": "CrossRef. https://doi.org/10.1075/nlp.9.02bie [4] Wafa Abdullah Alrajhi, Hend Al-Khalifa, Abdulmalik...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Hend Al",
+      "source": "references",
+      "context": "rg/10.1075/nlp.9.02bie [4] Wafa Abdullah Alrajhi, Hend Al-Khalifa, Abdulmalik AlSalman (2022). Asses...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Abdulmalik AlSalman",
+      "source": "references",
+      "context": "02bie [4] Wafa Abdullah Alrajhi, Hend Al-Khalifa, Abdulmalik AlSalman (2022). Assessing the Linguist...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Assessing the Linguistic Knowledge",
+      "source": "references",
+      "context": "jhi, Hend Al-Khalifa, Abdulmalik AlSalman (2022). Assessing the Linguistic Knowledge in Arabic Pre-t...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "in Arabic Pre",
+      "source": "references",
+      "context": "Salman (2022). Assessing the Linguistic Knowledge in Arabic Pre-trained Language Models Using Minima...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "trained Language Models Using",
+      "source": "references",
+      "context": " Assessing the Linguistic Knowledge in Arabic Pre-trained Language Models Using Minimal Pairs. Cross...",
+      "severity": "MEDIUM"
+    },
+    {
+      "type": "name",
+      "value": "Minimal Pairs",
+      "source": "references",
+      "context": "ledge in Arabic Pre-trained Language Models Using Minimal Pairs. CrossRef. https://doi.org/10.18653/...",
+      "severity": "MEDIUM"
+    }
+  ],
+  "risks": [
+    {
+      "category": "PII_EXPOSURE",
+      "description": "Found 2659 PII instances",
+      "severity": "HIGH",
+      "details": {
+        "critical": 4,
+        "high": 6,
+        "total": 2659
+      }
+    },
+    {
+      "category": "HIGH_RISK_DATA",
+      "description": "Found high-risk data categories: bank",
+      "severity": "HIGH",
+      "details": {
+        "categories": [
+          "bank"
+        ]
+      }
+    },
+    {
+      "category": "ANONYMIZATION",
+      "description": "PII found without evidence of anonymization",
+      "severity": "HIGH",
+      "details": {
+        "pii_types": [
+          "postal_code",
+          "credit_card",
+          "name",
+          "address"
+        ]
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "PII_ANONYMIZATION",
+      "title": "Anonymize or pseudonymize PII",
+      "description": "Found 2659 PII instances of types: postal_code, credit_card, name",
+      "priority": "HIGH",
+      "action": "Use anonymization_agent to remove or pseudonymize PII before publication",
+      "related_agent": "anonymization_agent"
+    },
+    {
+      "category": "DATA_PROTECTION",
+      "title": "Implement additional safeguards for high-risk data",
+      "description": "High-risk data categories detected: bank",
+      "priority": "CRITICAL",
+      "action": "Implement encryption, access control, and logging for high-risk data",
+      "related_agent": "encryption_agent"
+    },
+    {
+      "category": "DPIA",
+      "title": "Conduct formal Data Protection Impact Assessment",
+      "description": "Formal DPIA required due to PII processing and high-risk data",
+      "priority": "HIGH",
+      "action": "Complete the DPIA report and submit to data protection officer",
+      "related_agent": "gdpr_compliance"
+    },
+    {
+      "category": "DOCUMENTATION",
+      "title": "Update privacy documentation",
+      "description": "Privacy notice and data processing records need updating",
+      "priority": "MEDIUM",
+      "action": "Update README and documentation with privacy information",
+      "related_agent": "documentalist_agent"
+    }
+  ],
+  "compliance_status": {
+    "status": "PARTIALLY_COMPLIANT",
+    "details": "High risks found: 3",
+    "pii_found": true
+  }
+}

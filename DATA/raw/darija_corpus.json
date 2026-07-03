@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "project": "moroccan_digital_factory",
+  "description": "Moroccan Darija corpus for initial NLP experimentation",
+  "samples": [
+    {
+      "id": "D001",
+      "text": "kifash nqadro nbdaw machrou3 dial l'IA b Darija?",
+      "text_arabic": "كيفاش نقدر نبدا مشروع ديال الذكاء الاصطناعي بالدارجة المغربية؟",
+      "domain": "technology",
+      "source": "experimental"
+    },
+    {
+      "id": "D002",
+      "text": "lmaghrib 3ndo imkaniyat kbira f lmajal arraqmi",
+      "text_arabic": "المغرب عندو إمكانيات كبيرة فالمجال الرقمي",
+      "domain": "economy",
+      "source": "experimental"
+    },
+    {
+      "id": "D003",
+      "text": "darija hi lahja yawmiya katst3mal f lmaghrib f jami3 lmajalat",
+      "text_arabic": "الدارجة هي لهجة يومية كتستعمل فالمغرب فجميع المجالات",
+      "domain": "linguistics",
+      "source": "experimental"
+    },
+    {
+      "id": "D004",
+      "text": "wizarat l'intiqal arraqmi 3ndaha strategy jdida lta3ziz ssiyada arraqmiya",
+      "text_arabic": "وزارة الانتقال الرقمي عندها استراتيجية جديدة لتعزيز السيادة الرقمية",
+      "domain": "policy",
+      "source": "news"
+    },
+    {
+      "id": "D005",
+      "text": "kifash nstafido mn l'cloud computing f mashari3na bla ma nbniwo markaz data?",
+      "text_arabic": "كيفاش نستفيدو من السحابة السحابية فمشاريعنا بدون ما نبنيو مراكز بيانات؟",
+      "domain": "technology",
+      "source": "experimental"
+    },
+    {
+      "id": "D006",
+      "text": "lqanoun lmghribi kate7kom bih lmdina",
+      "text_arabic": "القانون المغربي كتحكم بيه المدينة",
+      "domain": "law",
+      "source": "legal"
+    },
+    {
+      "id": "D007",
+      "text": "tta3lim f lmaghrib tatawer b had lwa9t",
+      "text_arabic": "التعليم فالمغرب كيتطور بهاد الوقت",
+      "domain": "education",
+      "source": "academic"
+    },
+    {
+      "id": "D008",
+      "text": "sse7a f lmaghrib khdama 3la nizam jdid",
+      "text_arabic": "الصحة فالمغرب خدامة على نظام جديد",
+      "domain": "health",
+      "source": "news"
+    }
+  ],
+  "metadata": {
+    "total_samples": 8,
+    "language": "darija",
+    "script": "latin_arabic",
+    "created": "2026-07-02",
+    "status": "draft",
+    "version": "1.0",
+    "updated": "2026-07-02T13:30:21.707896"
+  }
+}

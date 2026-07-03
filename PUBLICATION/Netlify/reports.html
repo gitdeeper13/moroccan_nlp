@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moroccan_nlp - Reports & Publications</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        :root {
+            --primary-color: hsl(215.0, 68.5%, 54.8%);
+            --secondary-color: hsl(255.0, 58.5%, 59.8%);
+            --accent-color: hsl(240.0, 68.5%, 62.8%);
+            --dark-bg: hsl(0, 0%, 8%);
+            --text-light: #f5f5dc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .navbar {
+            background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--text-light); text-decoration: none; }
+        .logo span { color: var(--accent-color); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+        main { padding-top: 80px; min-height: calc(100vh - 300px); }
+        .hero {
+            background: rgba(0,0,0,0.3);
+            padding: 60px 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .badge {
+            background: rgba(255,255,255,0.1);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid var(--accent-color);
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card h3 { color: var(--accent-color); margin-bottom: 15px; }
+        .stat-card {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent-color); }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .footer {
+            background: var(--dark-bg);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 60px;
+            border-top: 3px solid var(--accent-color);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.8; font-size: 0.9rem; }
+        @media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .nav-links { display: none; } }
+    :root {
+    --primary-color: hsl(215.0, 68.5%, 54.8%);
+    --secondary-color: hsl(255.0, 58.5%, 59.8%);
+    --accent-color: hsl(240.0, 68.5%, 62.8%);
+    --dark-bg: hsl(0, 0%, 8%);
+    --light-bg: hsl(0, 0%, 12%);
+    --text-light: hsl(0, 0%, 88%);
+}
+
+/* Override default styles with theme */
+body {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+}
+.navbar {
+    background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
+    border-bottom: 2px solid var(--accent-color);
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+.badge, .stat-number, .card h3, .logo span, .footer-section h3 {
+    color: var(--accent-color);
+}
+.badge {
+    border-color: var(--accent-color);
+}
+.btn {
+    background: var(--accent-color);
+    color: var(--dark-bg);
+}
+.footer {
+    border-top-color: var(--accent-color);
+}
+a:hover {
+    color: var(--accent-color);
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">💻 <span>moroccan_nlp</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="">🏠 Home</a></li>
+                <li><a href="dashboard.html" class="">📊 Dashboard</a></li>
+                <li><a href="reports.html" class="active">📄 Reports</a></li>
+                <li><a href="documentation.html" class="">📚 Documentation</a></li>
+                <li><a href="chat.html" class="">💬 Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <!-- REPORTS_TEMPLATE - Reports & Publications -->
+<section class="hero">
+    <div class="badge">Research Outputs · Generated Reports</div>
+    <h1>📄 Reports & Publications</h1>
+    <p class="subtitle">Access all research outputs and analysis documents</p>
+</section>
+
+<div class="container">
+    <!-- Research Papers -->
+    <div class="card">
+        <h3>📝 Research Papers</h3>
+        <ul style="list-style: none;">
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <a href="https://doi.org/10.5281/zenodo.21154423" target="_blank" style="color: var(--accent-color); text-decoration: none;">
+                    📄 moroccan_nlp v1.0.0: Linguistic Resources and Models for Darija (Zenodo)
+                </a>
+            </li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <a href="https://huggingface.co/SI2M-Lab/DarijaBERT" target="_blank" style="color: var(--accent-color); text-decoration: none;">
+                    🤗 DarijaBERT: First BERT Model for Moroccan Darija (Hugging Face)
+                </a>
+            </li>
+            <li style="padding: 10px 0;">
+                <a href="#" style="color: var(--accent-color); text-decoration: none;">
+                    📄 Research Paper (PDF) - Coming Soon
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Datasets & Models -->
+    <div class="grid-2">
+        <div class="card">
+            <h3>📊 Datasets</h3>
+            <ul style="list-style: none;">
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <a href="DATA/raw/darija_corpus.json" style="color: var(--accent-color); text-decoration: none;">
+                        📂 Darija Corpus (JSON) - 8 samples
+                    </a>
+                </li>
+                <li style="padding: 10px 0;">
+                    <a href="DATA/processed/darija_corpus_cleaned.json" style="color: var(--accent-color); text-decoration: none;">
+                        📂 Cleaned Darija Corpus (JSON)
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🧠 Models</h3>
+            <ul style="list-style: none;">
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <a href="https://huggingface.co/SI2M-Lab/DarijaBERT" target="_blank" style="color: var(--accent-color); text-decoration: none;">
+                        🤗 DarijaBERT (0.2B parameters)
+                    </a>
+                </li>
+                <li style="padding: 10px 0;">
+                    <span>🔧 Baseline Classifier v6 (100% accuracy)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Analysis Reports -->
+    <div class="card">
+        <h3>📊 Analysis Reports</h3>
+        <ul style="list-style: none;">
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <a href="FINAL_REPORT.json" style="color: var(--accent-color); text-decoration: none;">
+                    📄 Final Report (JSON)
+                </a>
+            </li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <a href="scientific_state.json" style="color: var(--accent-color); text-decoration: none;">
+                    🔬 Scientific State (JSON)
+                </a>
+            </li>
+            <li style="padding: 10px 0;">
+                <a href="orchestrator_report.json" style="color: var(--accent-color); text-decoration: none;">
+                    📊 Orchestrator Report (JSON)
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Test Results -->
+    <div class="card">
+        <h3>🧪 Test Results</h3>
+        <ul style="list-style: none;">
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <a href="MODELS/DarijaBERT/results.txt" style="color: var(--accent-color); text-decoration: none;">
+                    📄 DarijaBERT Fill-Mask Test Results
+                </a>
+            </li>
+            <li style="padding: 10px 0;">
+                <span>✅ Baseline Classifier: 100% accuracy on 8 samples (7 domains)</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Citation & License -->
+    <div class="card">
+        <h3>📖 Citation & License</h3>
+        <ul style="list-style: none;">
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <a href="CITATION.cff" style="color: var(--accent-color); text-decoration: none;">
+                    📖 Citation (CFF)
+                </a>
+            </li>
+            <li style="padding: 10px 0;">
+                <span>License: MIT (code) · Research use only (DarijaBERT)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>🔬 moroccan_nlp</h3>
+                <p>Linguistic Resources and Models for Moroccan Darija and Arabic</p>
+                <p style="margin-top:0.5rem; font-size:0.9rem;">Version 1.0.0 · MIT License</p>
+                <p style="font-size:0.85rem; opacity:0.8;">
+                    DOI: <a href="https://doi.org/10.5281/zenodo.21154423" style="color: var(--accent-color);">10.5281/zenodo.21154423</a>
+                </p>
+                <p style="font-size:0.85rem; opacity:0.8;">
+                    ORCID: <a href="https://orcid.org/0009-0003-8903-0029" style="color: var(--accent-color);">0009-0003-8903-0029</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="dashboard.html">⚙️ Dashboard</a></li>
+                    <li><a href="reports.html">📊 Reports</a></li>
+                    <li><a href="documentation.html">📚 Documentation</a></li>
+                    <li><a href="chat.html">💬 Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Code Repositories</h3>
+                <ul>
+                    <li><a href="https://github.com/gitdeeper13/moroccan_nlp" target="_blank">🐙 GitHub (Primary) ↗</a></li>
+                    <li><a href="https://gitlab.com/gitdeeper/moroccan-nlp" target="_blank">🦊 GitLab (Mirror) ↗</a></li>
+                    <li><a href="https://bitbucket.org/gitdeeper-13/moroccan_nlp" target="_blank">🪣 Bitbucket ↗</a></li>
+                    <li><a href="https://codeberg.org/gitdeeper13/moroccan_nlp" target="_blank">🏔️ Codeberg ↗</a></li>
+                    <li><a href="https://pypi.org/project/moroccan-nlp/" target="_blank">🐍 PyPI Package ↗</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://doi.org/10.5281/zenodo.21154423" target="_blank">📄 Research Paper ↗</a></li>
+                    <li><a href="https://doi.org/10.5281/zenodo.21154423" target="_blank">📊 Zenodo Archive ↗</a></li>
+                    <li><a href="https://doi.org/10.17605/OSF.IO/AN2HV" target="_blank">📋 OSF Registration ↗</a></li>
+                    <li><a href="https://orcid.org/0009-0003-8903-0029" target="_blank">👤 ORCID Profile ↗</a></li>
+                    <li><a href="mailto:gitdeeper@gmail.com">✉️ Contact Author</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © moroccan_nlp 🏙 2026 | All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

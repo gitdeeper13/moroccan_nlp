@@ -1,0 +1,121 @@
+{
+  "project": "moroccan_nlp",
+  "level": 3,
+  "timestamp": "2026-06-30T15:54:33.204967",
+  "entities": [
+    {
+      "id": 165,
+      "name": "Darija Language Model",
+      "role": "Core System",
+      "value": 0.85
+    },
+    {
+      "id": 166,
+      "name": "Moroccan Dialect Corpus",
+      "role": "Dataset",
+      "value": 0.9
+    },
+    {
+      "id": 167,
+      "name": "Sentiment Analysis Model",
+      "role": "Validator",
+      "value": 0.75
+    },
+    {
+      "id": 168,
+      "name": "Named Entity Recognition",
+      "role": "Evaluator",
+      "value": 0.7
+    },
+    {
+      "id": 169,
+      "name": "Code-Switching Detection",
+      "role": "Target Variable",
+      "value": 0.65
+    },
+    {
+      "id": 170,
+      "name": "Arabic-Darija Translation",
+      "role": "Core System",
+      "value": 0.88
+    }
+  ],
+  "findings": [
+    "\u2705 DATA/ directory exists",
+    "\u2705 DOCS/ directory exists",
+    "\u2705 REPORTS/ directory exists",
+    "\u2705 Found 11 markdown files",
+    "\u2705 Found 34 data files",
+    "\u2705 Found 34 dataset files",
+    "\ud83d\udcca Total dataset size: 0.06 MB",
+    "\u2705 Found training logs",
+    "\ud83d\udcca Accuracy: 72.0%",
+    "\ud83d\udcca F1 Score: 68.0%"
+  ],
+  "issues": [
+    "\u274c Missing MODELS/ directory",
+    "\u26a0\ufe0f Dataset size is small (< 1 MB)",
+    "\u26a0\ufe0f No annotation files found",
+    "\u26a0\ufe0f No model files found"
+  ],
+  "score": 9.0,
+  "sections": {
+    "format": {
+      "findings": [
+        "\u2705 DATA/ directory exists",
+        "\u2705 DOCS/ directory exists",
+        "\u2705 REPORTS/ directory exists",
+        "\u2705 Found 11 markdown files",
+        "\u2705 Found 34 data files"
+      ],
+      "issues": [
+        "\u274c Missing MODELS/ directory"
+      ],
+      "directories": [
+        "DATA",
+        "DOCS",
+        "REPORTS",
+        "MODELS"
+      ],
+      "docs_count": 11,
+      "data_count": 34
+    },
+    "data_quality": {
+      "findings": [
+        "\u2705 Found 34 dataset files",
+        "\ud83d\udcca Total dataset size: 0.06 MB"
+      ],
+      "issues": [
+        "\u26a0\ufe0f Dataset size is small (< 1 MB)",
+        "\u26a0\ufe0f No annotation files found"
+      ],
+      "total_datasets": 34,
+      "total_annotations": 0,
+      "data_sources": [
+        "DODa",
+        "Atlaset",
+        ".MA_v2",
+        "DarijaBench"
+      ]
+    },
+    "model_evaluation": {
+      "findings": [
+        "\u2705 Found training logs",
+        "\ud83d\udcca Accuracy: 72.0%",
+        "\ud83d\udcca F1 Score: 68.0%"
+      ],
+      "issues": [
+        "\u26a0\ufe0f No model files found"
+      ],
+      "metrics": {
+        "accuracy": 0.72,
+        "f1_score": 0.68,
+        "precision": 0.7,
+        "recall": 0.66
+      },
+      "total_models": 0,
+      "has_metrics": true
+    }
+  },
+  "summary": "\nDARIJA PAT AGENT - Review Summary\n=================================\nProject: moroccan_nlp\nLevel: Model Evaluation - Performance and benchmarking\nScore: 9.0/10\nIssues: 4\nFindings: 10\n\nKey Points:\n  - \u2705 DATA/ directory exists\n  - \u2705 DOCS/ directory exists\n  - \u2705 REPORTS/ directory exists\n  - \u2705 Found 11 markdown files\n  - \u2705 Found 34 data files\n\nIssues to Address:\n  - \u274c Missing MODELS/ directory\n  - \u26a0\ufe0f Dataset size is small (< 1 MB)\n  - \u26a0\ufe0f No annotation files found\n"
+}

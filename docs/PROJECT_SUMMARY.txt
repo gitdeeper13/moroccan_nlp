@@ -1,0 +1,20 @@
+# moroccan_nlp - Project Summary
+
+**Domain:** computer_science
+**Subdiscipline:** N/A
+**Truth Score:** 74.17
+**Stage:** EXPERIMENTAL
+
+## Entities:
+- Darija Language Model, Core System, 0.85
+- Moroccan Dialect Corpus, Dataset, 0.9
+- Sentiment Analysis Model, Validator, 0.75
+- Named Entity Recognition, Evaluator, 0.7
+- Code-Switching Detection, Target Variable, 0.65
+- Arabic-Darija Translation, Core System, 0.88
+
+## Status:
+- Stage: EXPERIMENTAL
+- Quality Gate: REJECTED
+
+Generated: 2026-07-02 09:07:36

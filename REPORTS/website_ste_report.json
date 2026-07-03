@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-07-02T09:07:29",
+  "project": "moroccan_nlp",
+  "domain": "computer_science",
+  "ste_enabled": true,
+  "website_directory": "/storage/emulated/0/Download/GITDEEPER_LAB_ZERO_V6/PROJECTS/EXPERIMENTAL/moroccan_nlp/PUBLICATION/Netlify",
+  "paper_title": "Moroccan Nlp",
+  "keywords_count": 20,
+  "target_keywords": [
+    "abstract",
+    "ronin",
+    "july",
+    "diversity",
+    "introduction",
+    "models",
+    "primary",
+    "processing",
+    "renaissance",
+    "natural"
+  ],
+  "sections_count": 6,
+  "keywords_found_in_website": [
+    "primary"
+  ],
+  "consistency_percentage": 10.0
+}

@@ -1,0 +1,48 @@
+{
+  "domain": "computer_science",
+  "truth_score": 74.17,
+  "entities": [
+    {
+      "name": "Darija Language Model",
+      "role": "Core System",
+      "value": 0.85
+    },
+    {
+      "name": "Moroccan Dialect Corpus",
+      "role": "Dataset",
+      "value": 0.9
+    },
+    {
+      "name": "Sentiment Analysis Model",
+      "role": "Validator",
+      "value": 0.75
+    },
+    {
+      "name": "Named Entity Recognition",
+      "role": "Evaluator",
+      "value": 0.7
+    },
+    {
+      "name": "Code-Switching Detection",
+      "role": "Target Variable",
+      "value": 0.65
+    },
+    {
+      "name": "Arabic-Darija Translation",
+      "role": "Core System",
+      "value": 0.88
+    }
+  ],
+  "model_type": "hybrid_rf_nn",
+  "cv_folds": 10,
+  "dataset_size": 10000,
+  "features": 30,
+  "algorithm": "Hybrid Random Forest + Neural Network",
+  "imbalance_strategy": "SMOTE",
+  "statistical_tests": [
+    "t-test",
+    "bootstrap"
+  ],
+  "confidence_level": 0.95,
+  "metrics": {}
+}

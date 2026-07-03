@@ -1,0 +1,25 @@
+{
+  "project": "moroccan_nlp",
+  "timestamp": "2026-06-30T15:54:31.378587",
+  "total_entities": 2,
+  "datasets_found": 5,
+  "datasets": [
+    "doda",
+    "atlaset",
+    "ma_v2",
+    "darijabench",
+    "terjamabench"
+  ],
+  "updated_entities": [
+    {
+      "entity": "Darija Language Model",
+      "dataset": "Darija Open Dataset (DODa)",
+      "url": "https://github.com/abdellatif-laghjaj/dataset"
+    },
+    {
+      "entity": "Arabic-Darija Translation",
+      "dataset": "Darija Open Dataset (DODa)",
+      "url": "https://github.com/abdellatif-laghjaj/dataset"
+    }
+  ]
+}

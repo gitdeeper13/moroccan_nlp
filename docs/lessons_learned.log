@@ -1,0 +1,35 @@
+2026-07-02 09:07:46 - moroccan_nlp
+
+Project Review: Moroccan NLP
+
+**Lessons Learned:**
+
+1. **Data Quality is Key**: One of the most significant challenges faced in this project was the quality and availability of data. Insufficient labeled datasets, noisy data, and data imbalances led to poor model performance. Investing more time in data cleaning, preprocessing, and augmentation could have greatly improved results.
+
+2. **Model Complexity vs Accuracy**: The choice of model architecture and its complexity directly impacted the project's performance. Overfitting and underfitting were common issues, where models would either perform well on the training set but poorly on the test set or vice versa. This highlights the need for careful tuning of hyperparameters and cross-validation to avoid overfitting.
+
+3. **Feature Engineering**: Feature engineering was a crucial aspect of this project, but it didn't receive the attention it deserved. Extracting relevant features from raw data proved to be a challenge, and this negatively affected model performance. A more systematic approach to feature engineering, including techniques like feature selection and extraction, could have led to better results.
+
+4. **Interpretability and Explainability**: As the project progressed, the need for interpretability and explainability of models became evident. However, the chosen models (e.g., transformers) were difficult to interpret, making it challenging to understand their decision-making process. This limitation could have been mitigated by choosing models with better interpretability or using techniques like SHAP or LIME.
+
+5. **Evaluation Metrics**: The choice of evaluation metrics played a significant role in measuring the project's success. However, relying on a single metric (truth score) led to an incomplete picture of the model's performance. Incorporating more metrics, such as precision, recall, F1-score, and average precision, could have provided a more comprehensive understanding of the model's strengths and weaknesses.
+
+6. **Code Quality and Maintainability**: The project's codebase was somewhat cluttered, with multiple iterations of the same models and inconsistent naming conventions. This made it difficult for future developers to maintain and extend the codebase. A more systematic approach to version control, commenting, and refactoring could have improved code quality and maintainability.
+
+7. **Communication and Collaboration**: As the project progressed, communication and collaboration between team members became increasingly important. However, the project's complexity and tight deadlines led to some miscommunication, resulting in duplicated efforts and misunderstandings. Emphasizing open communication, regular check-ins, and collaborative documentation could have mitigated these challenges.
+
+8. **Timeline and Resource Allocation**: The project's timeline and resource allocation were not fully aligned with the project's complexity. Allocating more time and resources to the project could have allowed for a more thorough approach to data quality, feature engineering, and model selection.
+
+**Recommendations for Future Projects:**
+
+1. **Start with a clear problem formulation**: A well-defined problem statement and clear evaluation metrics will guide the project's direction and ensure that all stakeholders are on the same page.
+
+2. **Prioritize data quality**: Ingesting high-quality, diverse, and representative data is essential for model training. Invest time in data curation, labeling, and validation.
+
+3. **Careful model selection**: The choice of model architecture should be guided by the project's specific needs, considering factors like interpretability, computation resources, and model complexity.
+
+4. **Comprehensive evaluation metrics**: Use multiple metrics to assess model performance, including precision, recall, F1-score, and average precision, providing a more detailed understanding of the model's strengths and weaknesses.
+
+5. **Maintain a clean and organized codebase**: Follow best practices for code organization, commenting, and refactoring to ensure that the codebase is maintainable and extensible.
+
+By acknowledging these lessons and incorporating them into future projects, the Moroccan NLP project can become a stepping-stone for more effective, efficient, and interpretable artificial intelligence solutions in the domain of computer science.

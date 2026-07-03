@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-07-02T09:08:13.020702",
+  "project": "moroccan_nlp",
+  "domain": "computer_science",
+  "status": "SCORED",
+  "truth_score": 73.83,
+  "calibrated": 73.83,
+  "audit_score": 41.44,
+  "agents_score": 100.0,
+  "composite": 69.35,
+  "action": "ACCEPT",
+  "weights": {
+    "truth_score": 0.5,
+    "audit_score": 0.3,
+    "agents_score": 0.2
+  },
+  "heuristic": 61.71,
+  "llm": 92.0,
+  "word_count": 3666,
+  "ref_count": 40,
+  "entities": 6,
+  "integrity_violations": [],
+  "integrity_warnings": [],
+  "audit_breakdown": {
+    "A_data_present": {
+      "score": 60.0,
+      "weight": 0.4,
+      "detail": {
+        "data_dir_exists": true,
+        "files": [
+          {
+            "file": "input.json",
+            "size_kb": 0.1
+          }
+        ],
+        "score": 60.0
+      }
+    },
+    "B_data_used": {
+      "score": 0.0,
+      "weight": 0.3,
+      "detail": {
+        "report_exists": true,
+        "score": 0.0,
+        "total_entities": 6,
+        "updated_entities": 0,
+        "updated_list": []
+      }
+    },
+    "C_source_docs": {
+      "score": 65.0,
+      "weight": 0.2,
+      "detail": {
+        "paper_used": "research_paper_final.txt",
+        "hits": [
+          "ilo",
+          "https://",
+          "data source"
+        ],
+        "score": 65.0
+      }
+    },
+    "D_consistency": {
+      "score": 44.4,
+      "weight": 0.1,
+      "detail": {
+        "score": 44.4,
+        "abstract_nums": 9,
+        "results_nums": 55,
+        "shared": 4
+      }
+    },
+    "structure_completeness_pct": 98.48
+  },
+  "audit_timestamp": "2026-07-02T09:08:11.562795"
+}

@@ -1,0 +1,36 @@
+{
+  "ste_enabled": true,
+  "paper_title": "Moroccan Nlp",
+  "paper_keywords": [
+    "abstract",
+    "ronin",
+    "july",
+    "diversity",
+    "introduction",
+    "models",
+    "primary",
+    "processing",
+    "renaissance",
+    "natural",
+    "hindered",
+    "affiliation",
+    "applications",
+    "building",
+    "rite",
+    "effective",
+    "languages",
+    "tailored",
+    "darija",
+    "baladi"
+  ],
+  "paper_sections": [
+    "Introduction",
+    "Abstract",
+    "Methodology",
+    "Results",
+    "Discussion",
+    "Conclusion"
+  ],
+  "domain": "computer_science",
+  "consistency_target": 85
+}

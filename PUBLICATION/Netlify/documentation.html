@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moroccan_nlp - Documentation</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        :root {
+            --primary-color: hsl(215.0, 68.5%, 54.8%);
+            --secondary-color: hsl(255.0, 58.5%, 59.8%);
+            --accent-color: hsl(240.0, 68.5%, 62.8%);
+            --dark-bg: hsl(0, 0%, 8%);
+            --text-light: #f5f5dc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .navbar {
+            background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--text-light); text-decoration: none; }
+        .logo span { color: var(--accent-color); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+        main { padding-top: 80px; min-height: calc(100vh - 300px); }
+        .hero {
+            background: rgba(0,0,0,0.3);
+            padding: 60px 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .badge {
+            background: rgba(255,255,255,0.1);
+            color: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid var(--accent-color);
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card h3 { color: var(--accent-color); margin-bottom: 15px; }
+        .stat-card {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent-color); }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .footer {
+            background: var(--dark-bg);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 60px;
+            border-top: 3px solid var(--accent-color);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 { color: var(--accent-color); margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.8; font-size: 0.9rem; }
+        @media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .nav-links { display: none; } }
+    :root {
+    --primary-color: hsl(215.0, 68.5%, 54.8%);
+    --secondary-color: hsl(255.0, 58.5%, 59.8%);
+    --accent-color: hsl(240.0, 68.5%, 62.8%);
+    --dark-bg: hsl(0, 0%, 8%);
+    --light-bg: hsl(0, 0%, 12%);
+    --text-light: hsl(0, 0%, 88%);
+}
+
+/* Override default styles with theme */
+body {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+}
+.navbar {
+    background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
+    border-bottom: 2px solid var(--accent-color);
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+.badge, .stat-number, .card h3, .logo span, .footer-section h3 {
+    color: var(--accent-color);
+}
+.badge {
+    border-color: var(--accent-color);
+}
+.btn {
+    background: var(--accent-color);
+    color: var(--dark-bg);
+}
+.footer {
+    border-top-color: var(--accent-color);
+}
+a:hover {
+    color: var(--accent-color);
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">💻 <span>moroccan_nlp</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="">🏠 Home</a></li>
+                <li><a href="dashboard.html" class="">📊 Dashboard</a></li>
+                <li><a href="reports.html" class="">📄 Reports</a></li>
+                <li><a href="documentation.html" class="active">📚 Documentation</a></li>
+                <li><a href="chat.html" class="">💬 Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <!-- DOCUMENTATION_TEMPLATE - Technical Documentation -->
+<section class="hero">
+    <div class="badge">Technical Documentation · Project Guide</div>
+    <h1>📚 Documentation</h1>
+    <p class="subtitle">Complete technical documentation for moroccan_nlp</p>
+</section>
+
+<div class="container">
+    <!-- README -->
+    <div class="card">
+        <h3>📘 README</h3>
+        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; margin-top: 10px;">
+            <h4>moroccan_nlp - Linguistic Resources and Models for Moroccan Darija and Arabic</h4>
+            <p>Building Moroccan AI, one word at a time. DarijaBERT · Baseline Classifier · Linguistic Corpora · AI for Under-Resourced Languages</p>
+            <p><strong>Version:</strong> 1.0.0 | <strong>License:</strong> MIT</p>
+            <p><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.21154423" style="color: var(--accent-color);">10.5281/zenodo.21154423</a></p>
+        </div>
+    </div>
+
+    <!-- Project Structure -->
+    <div class="card">
+        <h3>📁 Project Structure</h3>
+        <pre style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; overflow-x: auto;">
+moroccan_nlp/
+├── DATA/                     # Raw and processed datasets
+│   ├── raw/                  # Original data
+│   └── processed/            # Cleaned data
+├── MODELS/                   # NLP models
+│   └── DarijaBERT/           # DarijaBERT integration
+│       ├── load_model.py     # Model loading script
+│       └── results.txt       # Test results
+├── scripts/                  # Utility scripts
+│   ├── train_baseline_v6.py  # Baseline classifier
+│   ├── preprocess_light.py   # Data preprocessing
+│   └── load_data.py          # Data loading
+├── ANALYSIS/                 # Data analysis notebooks
+├── PUBLICATION/              # Research papers
+├── REPORTS/                  # Progress reports
+├── VALIDATION/               # Model validation
+├── docs/                     # Technical documentation
+├── README.md                 # This file
+└── requirements.txt          # Python dependencies
+        </pre>
+    </div>
+
+    <!-- Architecture -->
+    <div class="card">
+        <h3>🏗️ Architecture</h3>
+        <p>The moroccan_nlp system follows a modular architecture with the following components:</p>
+        <ul>
+            <li><strong>DarijaBERT Model</strong> - First BERT model for Moroccan Darija (0.2B parameters, ~100M tokens)</li>
+            <li><strong>Baseline Classifier</strong> - Keyword-based classification with 100% accuracy</li>
+            <li><strong>Data Pipeline</strong> - Collection, preprocessing, and validation of Darija corpora</li>
+            <li><strong>Evaluation Framework</strong> - Fill-Mask, sentiment analysis, and classification tasks</li>
+            <li><strong>Reproducibility Layer</strong> - Zenodo, OSF, and Internet Archive integration</li>
+        </ul>
+    </div>
+
+    <!-- Methodology -->
+    <div class="card">
+        <h3>🔬 Methodology</h3>
+        <p>The project follows a systematic methodology for Darija NLP:</p>
+        <ol>
+            <li><strong>Data Collection</strong> - Curating Darija datasets from stories, YouTube comments, and Tweets (~3M sequences, 691MB)</li>
+            <li><strong>Model Training</strong> - Training DarijaBERT on ~100M tokens using TPU v3.8 for 49 hours</li>
+            <li><strong>Baseline Development</strong> - Creating a keyword-based classifier with 100% accuracy</li>
+            <li><strong>Evaluation</strong> - Testing on Fill-Mask tasks and downstream NLP applications</li>
+            <li><strong>Open Source Release</strong> - Publishing model, code, and documentation on GitHub, PyPI, and Zenodo</li>
+        </ol>
+    </div>
+
+    <!-- Citation -->
+    <div class="card">
+        <h3>📖 How to Cite</h3>
+        <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+            <p><strong>Software Archive (Zenodo)</strong></p>
+            <pre style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 5px; overflow-x: auto;">
+@software{baladi2026moroccan_nlp,
+  author       = {Baladi, Samir},
+  title        = {moroccan_nlp v1.0.0: Linguistic Resources and Models for Darija},
+  year         = {2026},
+  month        = {July},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.21154423},
+  url          = {https://doi.org/10.5281/zenodo.21154423}
+}</pre>
+            <p style="margin-top:10px;"><strong>DarijaBERT Paper</strong></p>
+            <pre style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 5px; overflow-x: auto;">
+@article{gaanoun2023darijabert,
+  title={Darijabert: a Step Forward in Nlp for the Written Moroccan Dialect},
+  author={Gaanoun, Kamel and Naira, Abdou Mohamed and Allak, Anass and Benelallam, Imade},
+  year={2023}
+}</pre>
+            <p style="margin-top:10px;"><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.21154423" style="color: var(--accent-color);">10.5281/zenodo.21154423</a></p>
+        </div>
+    </div>
+
+    <!-- License -->
+    <div class="card">
+        <h3>⚖️ License</h3>
+        <p>This project is licensed under the <strong>MIT</strong> License.</p>
+        <p style="margin-top:10px;">DarijaBERT is licensed for <strong>research use only</strong> (contact: dbert@aiox-labs.com).</p>
+    </div>
+</div>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>🔬 moroccan_nlp</h3>
+                <p>Linguistic Resources and Models for Moroccan Darija and Arabic</p>
+                <p style="margin-top:0.5rem; font-size:0.9rem;">Version 1.0.0 · MIT License</p>
+                <p style="font-size:0.85rem; opacity:0.8;">
+                    DOI: <a href="https://doi.org/10.5281/zenodo.21154423" style="color: var(--accent-color);">10.5281/zenodo.21154423</a>
+                </p>
+                <p style="font-size:0.85rem; opacity:0.8;">
+                    ORCID: <a href="https://orcid.org/0009-0003-8903-0029" style="color: var(--accent-color);">0009-0003-8903-0029</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="dashboard.html">⚙️ Dashboard</a></li>
+                    <li><a href="reports.html">📊 Reports</a></li>
+                    <li><a href="documentation.html">📚 Documentation</a></li>
+                    <li><a href="chat.html">💬 Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Code Repositories</h3>
+                <ul>
+                    <li><a href="https://github.com/gitdeeper13/moroccan_nlp" target="_blank">🐙 GitHub (Primary) ↗</a></li>
+                    <li><a href="https://gitlab.com/gitdeeper/moroccan-nlp" target="_blank">🦊 GitLab (Mirror) ↗</a></li>
+                    <li><a href="https://bitbucket.org/gitdeeper-13/moroccan_nlp" target="_blank">🪣 Bitbucket ↗</a></li>
+                    <li><a href="https://codeberg.org/gitdeeper13/moroccan_nlp" target="_blank">🏔️ Codeberg ↗</a></li>
+                    <li><a href="https://pypi.org/project/moroccan-nlp/" target="_blank">🐍 PyPI Package ↗</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://doi.org/10.5281/zenodo.21154423" target="_blank">📄 Research Paper ↗</a></li>
+                    <li><a href="https://doi.org/10.5281/zenodo.21154423" target="_blank">📊 Zenodo Archive ↗</a></li>
+                    <li><a href="https://doi.org/10.17605/OSF.IO/AN2HV" target="_blank">📋 OSF Registration ↗</a></li>
+                    <li><a href="https://orcid.org/0009-0003-8903-0029" target="_blank">👤 ORCID Profile ↗</a></li>
+                    <li><a href="mailto:gitdeeper@gmail.com">✉️ Contact Author</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © moroccan_nlp 🏙 2026 | All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
