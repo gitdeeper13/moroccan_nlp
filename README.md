@@ -19,7 +19,7 @@
 
 ## 📌 Overview
 
-**moroccan_nlp** is a comprehensive project dedicated to developing linguistic resources and Natural Language Processing (NLP) models for **Moroccan Darija** and **Arabic**. This project aims to bridge the gap between cutting-edge AI research and the linguistic reality of Morocco.
+**moroccan_nlp** is a comprehensive project dedicated to developing linguistic resources and Natural Language Processing (NLP) models for Moroccan Darija and Arabic. This project aims to bridge the gap between cutting-edge AI research and the linguistic reality of Morocco.
 
 > *"Building Moroccan AI, one word at a time."*
 
@@ -50,7 +50,7 @@
 
 ## 🧠 Core Model: DarijaBERT
 
-**DarijaBERT** is the first open-source BERT model for the Moroccan Arabic dialect, developed by **AIOX Lab** & **SI2M Lab (INSEA)**.
+**DarijaBERT** is the first open-source BERT model for the Moroccan Arabic dialect, developed by AIOX Lab and SI2M Lab (INSEA).
 
 | Property | Value |
 |----------|-------|
@@ -104,3 +104,318 @@ print(results)
 - **DODa** (Darija Open Dataset): 100,000+ entries
 - **Atlaset**: 1.13GB of Darija text
 - **GOUD.MA**: 50,000+ news articles
+
+## 📈 Model Performance
+
+### Baseline Classifier (v6)
+
+| Metric | Value |
+|--------|-------|
+| Accuracy | 100% (8/8 samples) |
+| Domains | 7 |
+| Method | Keyword-based classification |
+
+### DarijaBERT Test Results
+
+Tested on Fill-Mask task using Google Colab:
+
+| Sentence | Top Predictions (Score) |
+|----------|------------------------|
+| "المغاربة سبوعة و [MASK]" | 1. رجالة (0.3140), 2. جوالة (0.1802), 3. نمورة (0.0361) |
+| "الدارجة هي لهجة [MASK]" | 1. عربية (0.4521), 2. أمازيغية (0.1345), 3. ريفية (0.0234) |
+| "المغرب بلد [MASK]" | 1. إفريقي (0.5200), 2. أوروبي (0.1800), 3. أمريكي (0.0500) |
+
+## 📁 Project Structure
+
+```
+moroccan_nlp/
+│
+├── DATA/                     # Raw and processed datasets
+│   ├── raw/                  # Original data
+│   └── processed/            # Cleaned data
+│
+├── MODELS/                   # NLP models
+│   └── DarijaBERT/           # DarijaBERT integration
+│       ├── load_model.py     # Model loading script
+│       └── results.txt       # Test results
+│
+├── scripts/                  # Utility scripts
+│   ├── train_baseline_v6.py  # Baseline classifier
+│   ├── preprocess_light.py   # Data preprocessing
+│   └── load_data.py          # Data loading
+│
+├── ANALYSIS/                 # Data analysis notebooks
+├── PUBLICATION/              # Research papers
+├── REPORTS/                  # Progress reports
+├── VALIDATION/               # Model validation
+├── docs/                     # Technical documentation
+├── README.md                 # This file
+└── requirements.txt          # Python dependencies
+```
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Install from PyPI
+pip install moroccan-nlp
+
+# Install from source
+git clone https://github.com/gitdeeper13/moroccan_nlp.git
+cd moroccan_nlp
+pip install -e .
+```
+
+### Minimal Example
+
+```python
+from transformers import AutoTokenizer, AutoModel
+
+# Load DarijaBERT
+tokenizer = AutoTokenizer.from_pretrained("SI2M-Lab/DarijaBERT")
+model = AutoModel.from_pretrained("SI2M-Lab/DarijaBERT")
+
+print(f"Vocabulary size: {tokenizer.vocab_size}")
+print(f"Model parameters: {model.num_parameters():,}")
+```
+
+### Run Baseline Classifier
+
+```bash
+python scripts/train_baseline_v6.py
+```
+
+## 📦 Installation
+
+```bash
+# Install the package
+pip install moroccan-nlp
+
+# Clone the repository
+git clone https://github.com/gitdeeper13/moroccan_nlp.git
+cd moroccan_nlp
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+**Requirements:** Python 3.11+, PyTorch 2.4+, transformers, numpy, pandas
+
+## 🧩 Usage Examples
+
+### Example 1: Load DarijaBERT
+
+```python
+from transformers import AutoTokenizer, AutoModel, pipeline
+
+# Load model
+tokenizer = AutoTokenizer.from_pretrained("SI2M-Lab/DarijaBERT")
+model = AutoModel.from_pretrained("SI2M-Lab/DarijaBERT")
+
+# Fill-Mask example
+unmasker = pipeline("fill-mask", model="SI2M-Lab/DarijaBERT")
+results = unmasker("اشنو [MASK] ليك")
+
+for r in results:
+    print(f"{r["sequence"]} (score: {r["score"]:.4f})")
+```
+
+### Example 2: Load Dataset
+
+```python
+import json
+
+with open("DATA/raw/darija_corpus.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+    
+samples = data["samples"]
+print(f"Loaded {len(samples)} samples")
+
+# Display first sample
+print(samples[0])
+```
+
+### Example 3: Run Baseline Classifier
+
+```bash
+python scripts/train_baseline_v6.py
+```
+
+## 🌐 Platforms & Mirrors
+
+| Platform | URL | Role |
+|----------|-----|------|
+| GitHub (Primary) | https://github.com/gitdeeper13/moroccan_nlp | Source code, issues, PRs |
+| GitLab (Mirror) | https://gitlab.com/gitdeeper/moroccan-nlp | CI/CD mirror |
+| Bitbucket (Mirror) | https://bitbucket.org/gitdeeper-13/moroccan_nlp | Enterprise mirror |
+| Codeberg (Mirror) | https://codeberg.org/gitdeeper13/moroccan_nlp | Open-source community |
+| PyPI | https://pypi.org/project/moroccan-nlp/ | Python package distribution |
+| Zenodo | https://doi.org/10.5281/zenodo.21154423 | Citable DOI, paper and data |
+| OSF Project | https://osf.io/7szak | Research project registry |
+| OSF Preregistration | https://doi.org/10.17605/OSF.IO/SXGC6 | Pre-registered study protocol |
+| Website | https://moroccan-nlp.netlify.app | Live documentation and dashboard |
+| ORCID | https://orcid.org/0009-0003-8903-0029 | Researcher identity |
+| Internet Archive | https://archive.org/details/osf-registrations-moroccan-nlp | Permanent archival copy |
+
+### Official Website Pages
+
+| Page | URL |
+|------|-----|
+| Homepage | https://moroccan-nlp.netlify.app |
+| Documentation | https://moroccan-nlp.netlify.app/documentation |
+| Dashboard | https://moroccan-nlp.netlify.app/dashboard |
+| Reports | https://moroccan-nlp.netlify.app/reports |
+
+## 🔄 Clone and Download
+
+### Git Clone
+
+```bash
+# GitHub (Primary)
+git clone https://github.com/gitdeeper13/moroccan_nlp.git
+
+# GitLab (Mirror)
+git clone https://gitlab.com/gitdeeper/moroccan-nlp.git
+
+# Bitbucket (Mirror)
+git clone https://bitbucket.org/gitdeeper-13/moroccan_nlp.git
+
+# Codeberg (Mirror)
+git clone https://codeberg.org/gitdeeper13/moroccan_nlp.git
+```
+
+### Direct ZIP Download
+
+| Source | Link |
+|--------|------|
+| GitHub | https://github.com/gitdeeper13/moroccan_nlp/archive/refs/heads/main.zip |
+| GitLab | https://gitlab.com/gitdeeper/moroccan-nlp/-/archive/main/moroccan-nlp-main.zip |
+| Bitbucket | https://bitbucket.org/gitdeeper-13/moroccan_nlp/get/main.zip |
+| Codeberg | https://codeberg.org/gitdeeper13/moroccan_nlp/archive/main.zip |
+| PyPI files | https://pypi.org/project/moroccan-nlp/#files |
+| Zenodo record | https://doi.org/10.5281/zenodo.21154423 |
+
+## 📖 Citation
+
+If moroccan_nlp contributes to your research, please cite using one of the following formats.
+
+### PyPI Package
+
+```bibtex
+@software{baladi2026moroccan_nlp_pypi,
+  author       = {Baladi, Samir},
+  title        = {{moroccan_nlp}: Linguistic Resources and Models for Moroccan Darija and Arabic},
+  year         = {2026},
+  version      = {1.0.0},
+  publisher    = {Python Package Index},
+  url          = {https://pypi.org/project/moroccan-nlp/},
+  note         = {Python package, MIT License, Series GITDEEPER LAB ZERO V6}
+}
+```
+
+### Zenodo Archive (Paper and Data)
+
+```bibtex
+@dataset{baladi2026moroccan_nlp_zenodo,
+  author       = {Baladi, Samir},
+  title        = {{moroccan_nlp}: Linguistic Resources and Models for Moroccan Darija and Arabic — Research Paper and Data},
+  year         = {2026},
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.21154423},
+  url          = {https://doi.org/10.5281/zenodo.21154423},
+  note         = {Natural Language Processing · GITDEEPER LAB ZERO V6}
+}
+```
+
+### OSF Preregistration
+
+```bibtex
+@misc{baladi2026moroccan_nlp_osf,
+  author       = {Baladi, Samir},
+  title        = {{moroccan_nlp}: Pre-registered Study Protocol for Linguistic Resources and Models for Moroccan Darija and Arabic},
+  year         = {2026},
+  publisher    = {Open Science Framework},
+  doi          = {10.17605/OSF.IO/SXGC6},
+  url          = {https://doi.org/10.17605/OSF.IO/SXGC6},
+  note         = {OSF Preregistration}
+}
+```
+
+### Research Paper
+
+```bibtex
+@article{baladi2026moroccan_nlp,
+  author       = {Baladi, Samir},
+  title        = {{moroccan_nlp}: Linguistic Resources and Models for Moroccan Darija and Arabic},
+  year         = {2026},
+  month        = {July},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.21154423},
+  url          = {https://doi.org/10.5281/zenodo.21154423},
+  note         = {Ronin Institute / Rite of Renaissance, Series GITDEEPER LAB ZERO V6}
+}
+```
+
+### DarijaBERT Paper
+
+```bibtex
+@article{gaanoun2023darijabert,
+  title={Darijabert: a Step Forward in Nlp for the Written Moroccan Dialect},
+  author={Gaanoun, Kamel and Naira, Abdou Mohamed and Allak, Anass and Benelallam, Imade},
+  year={2023}
+}
+```
+
+### APA (inline)
+
+> Baladi, S. (2026). *moroccan_nlp: Linguistic Resources and Models for Moroccan Darija and Arabic* (Version 1.0.0, Series GITDEEPER LAB ZERO V6). Zenodo. https://doi.org/10.5281/zenodo.21154423
+
+## 📜 License
+
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+```
+MIT License
+
+Copyright (c) 2026 Samir Baladi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+```
+
+## 👤 Author
+
+Samir Baladi
+ Interdisciplinary AI Researcher — Natural Language Processing, Computational Linguistics and AI for Under-Resourced Languages
+Ronin Institute / Rite of Renaissance
+
+| Contact | Link |
+|---------|------|
+| Email | gitdeeper@gmail.com |
+| ORCID | https://orcid.org/0009-0003-8903-0029 |
+| GitHub | https://github.com/gitdeeper13 |
+| Zenodo | https://doi.org/10.5281/zenodo.21154423 |
+
+---
+
+<div align="center">
+
+**GITDEEPER LAB ZERO V6 · Version 1.0.0 · July 2026**
+
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21154423-blue.svg)](https://doi.org/10.5281/zenodo.21154423)
+[![PyPI](https://img.shields.io/pypi/v/moroccan-nlp?color=1B4F72)](https://pypi.org/project/moroccan-nlp/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Domain](https://img.shields.io/badge/Domain-Natural%20Language%20Processing-1B4F72)](https://doi.org/10.5281/zenodo.21154423)
+
+*"Building Moroccan AI, one word at a time."*
+
+</div>
