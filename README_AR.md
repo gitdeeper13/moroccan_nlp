@@ -1,5 +1,3 @@
-<div align="center">
-
 # moroccan_nlp
 
 ### معالجة اللغة الطبيعية: الموارد اللغوية والنماذج للدارجة المغربية والعربية
@@ -19,17 +17,11 @@
 [![Series](https://img.shields.io/badge/Series-GITDEEPER%20LAB%20ZERO%20V6-1A5276)](https://doi.org/10.5281/zenodo.21154423)
 [![Version](https://img.shields.io/badge/Version-1.0.0-orange)](https://github.com/gitdeeper13/moroccan_nlp)
 
-</div>
-
----
-
 ## 📌 نظرة عامة
 
 **moroccan_nlp** هو مشروع شامل مخصص لتطوير الموارد اللغوية ونماذج معالجة اللغة الطبيعية (NLP) للدارجة المغربية والعربية. يهدف هذا المشروع إلى سد الفجوة بين أبحاث الذكاء الاصطناعي المتطورة والواقع اللغوي في المغرب.
 
 > *"بناء الذكاء الاصطناعي المغربي، كلمة كلمة."*
-
----
 
 ## 🗂️ جدول المحتويات
 
@@ -48,8 +40,6 @@
 - [الترخيص](#-الترخيص)
 - [المؤلف](#-المؤلف)
 
----
-
 ## ✨ الميزات الأساسية
 
 - **دمج DarijaBERT**: أول نموذج BERT للدارجة المغربية (0.2B معامل، ~100M رمز)
@@ -58,21 +48,19 @@
 - **مفتوح المصدر**: مرخص تحت MIT، متاح على PyPI
 - **بحث قابل للتكرار**: بنية تحتية كاملة مع Zenodo و OSF وأرشيف الإنترنت
 
----
-
 ## 🧠 النموذج الأساسي: DarijaBERT
 
-**DarijaBERT** هو أول نموذج BERT مفتوح المصدر للهجة العربية المغربية، تم تطويره بواسطة **AIOX Lab** و **SI2M Lab (INSEA)**.
+**DarijaBERT** هو أول نموذج BERT مفتوح المصدر للهجة العربية المغربية، تم تطويره بواسطة AIOX Lab و SI2M Lab (INSEA).
 
 | الخاصية | القيمة |
 |----------|-------|
-| **المعمارية** | BERT-base (بدون NSP) |
-| **حجم النموذج** | 0.2B معامل |
-| **بيانات التدريب** | ~3M جمل، 691 ميجابايت، ~100M رمز |
-| **المصادر** | قصص، تعليقات يوتيوب، تغريدات |
-| **حجم المفردات** | 80,000 |
-| **التحميل الشهري** | 1,296 |
-| **الترخيص** | استخدام بحثي فقط (للتواصل: dbert@aiox-labs.com) |
+| المعمارية | BERT-base (بدون NSP) |
+| حجم النموذج | 0.2B معامل |
+| بيانات التدريب | ~3M جمل، 691 ميجابايت، ~100M رمز |
+| المصادر | قصص، تعليقات يوتيوب، تغريدات |
+| حجم المفردات | 80,000 |
+| التحميل الشهري | 1,296 |
+| الترخيص | استخدام بحثي فقط (للتواصل: dbert@aiox-labs.com) |
 
 ### تحميل النموذج
 
@@ -83,17 +71,17 @@ tokenizer = AutoTokenizer.from_pretrained("SI2M-Lab/DarijaBERT")
 model = AutoModel.from_pretrained("SI2M-Lab/DarijaBERT")
 ```
 
-مثال Fill-Mask
+### مثال Fill-Mask
 
 ```python
 from transformers import pipeline
 
-unmasker = pipeline('fill-mask', model='SI2M-Lab/DarijaBERT')
+unmasker = pipeline("fill-mask", model="SI2M-Lab/DarijaBERT")
 results = unmasker("اشنو [MASK] ليك")
 print(results)
 ```
 
-الاستشهاد
+### الاستشهاد
 
 ```bibtex
 @article{gaanoun2023darijabert,
@@ -103,44 +91,41 @@ print(results)
 }
 ```
 
----
+## 📊 مجموعات البيانات
 
-📊 مجموعات البيانات
+### مجموعات البيانات الحالية
 
-مجموعات البيانات الحالية
+| المجموعة | العينات | المجالات | التنسيق |
+|---------|---------|---------|--------|
+| مدونة الدارجة | 8 | 7 (تكنولوجيا، اقتصاد، لغويات، سياسة، قانون، تعليم، صحة) | JSON |
 
-المجموعة العينات المجالات التنسيق
-مدونة الدارجة 8 7 (تكنولوجيا، اقتصاد، لغويات، سياسة، قانون، تعليم، صحة) JSON
+### مجموعات البيانات المخطط لها
 
-مجموعات البيانات المخطط لها
+- **DODa** (مجموعة بيانات الدارجة المفتوحة): أكثر من 100,000 مدخل
+- **Atlaset**: 1.13 جيجابايت من نصوص الدارجة
+- **GOUD.MA**: أكثر من 50,000 مقال إخباري
 
-· DODa (مجموعة بيانات الدارجة المفتوحة): أكثر من 100,000 مدخل
-· Atlaset: 1.13 جيجابايت من نصوص الدارجة
-· GOUD.MA: أكثر من 50,000 مقال إخباري
+## 📈 أداء النماذج
 
----
+### المصنف الأساسي (الإصدار 6)
 
-📈 أداء النماذج
+| المقياس | القيمة |
+|--------|-------|
+| الدقة | 100% (8/8 عينات) |
+| المجالات | 7 |
+| الطريقة | تصنيف قائم على الكلمات المفتاحية |
 
-المصنف الأساسي (الإصدار 6)
-
-المقياس القيمة
-الدقة 100% (8/8 عينات)
-المجالات 7
-الطريقة تصنيف قائم على الكلمات المفتاحية
-
-نتائج اختبار DarijaBERT
+### نتائج اختبار DarijaBERT
 
 تم الاختبار على مهمة Fill-Mask باستخدام Google Colab:
 
-الجملة أفضل التنبؤات (الدرجة)
-"المغاربة سبوعة و [MASK]" 1. رجالة (0.3140), 2. جوالة (0.1802), 3. نمورة (0.0361)
-"الدارجة هي لهجة [MASK]" 1. عربية (0.4521), 2. أمازيغية (0.1345), 3. ريفية (0.0234)
-"المغرب بلد [MASK]" 1. إفريقي (0.5200), 2. أوروبي (0.1800), 3. أمريكي (0.0500)
+| الجملة | أفضل التنبؤات (الدرجة) |
+|--------|----------------------|
+| "المغاربة سبوعة و [MASK]" | 1. رجالة (0.3140), 2. جوالة (0.1802), 3. نمورة (0.0361) |
+| "الدارجة هي لهجة [MASK]" | 1. عربية (0.4521), 2. أمازيغية (0.1345), 3. ريفية (0.0234) |
+| "المغرب بلد [MASK]" | 1. إفريقي (0.5200), 2. أوروبي (0.1800), 3. أمريكي (0.0500) |
 
----
-
-📁 هيكل المشروع
+## 📁 هيكل المشروع
 
 ```
 moroccan_nlp/
@@ -168,11 +153,9 @@ moroccan_nlp/
 └── requirements.txt          # متطلبات Python
 ```
 
----
+## 🚀 بدء سريع
 
-🚀 بدء سريع
-
-التثبيت
+### التثبيت
 
 ```bash
 # تثبيت من PyPI
@@ -184,7 +167,7 @@ cd moroccan_nlp
 pip install -e .
 ```
 
-مثال بسيط
+### مثال بسيط
 
 ```python
 from transformers import AutoTokenizer, AutoModel
@@ -197,15 +180,13 @@ print(f"حجم المفردات: {tokenizer.vocab_size}")
 print(f"معاملات النموذج: {model.num_parameters():,}")
 ```
 
-تشغيل المصنف الأساسي
+### تشغيل المصنف الأساسي
 
 ```bash
 python scripts/train_baseline_v6.py
 ```
 
----
-
-📦 التثبيت
+## 📦 التثبيت
 
 ```bash
 # تثبيت الحزمة
@@ -219,13 +200,11 @@ cd moroccan_nlp
 pip install -r requirements.txt
 ```
 
-المتطلبات: Python 3.11+، PyTorch 2.4+، transformers، numpy، pandas
+**المتطلبات:** Python 3.11+، PyTorch 2.4+، transformers، numpy، pandas
 
----
+## 🧩 أمثلة الاستخدام
 
-🧩 أمثلة الاستخدام
-
-مثال 1: تحميل DarijaBERT
+### مثال 1: تحميل DarijaBERT
 
 ```python
 from transformers import AutoTokenizer, AutoModel, pipeline
@@ -235,64 +214,62 @@ tokenizer = AutoTokenizer.from_pretrained("SI2M-Lab/DarijaBERT")
 model = AutoModel.from_pretrained("SI2M-Lab/DarijaBERT")
 
 # مثال Fill-Mask
-unmasker = pipeline('fill-mask', model='SI2M-Lab/DarijaBERT')
+unmasker = pipeline("fill-mask", model="SI2M-Lab/DarijaBERT")
 results = unmasker("اشنو [MASK] ليك")
 
 for r in results:
-    print(f"{r['sequence']} (الدرجة: {r['score']:.4f})")
+    print(f"{r["sequence"]} (الدرجة: {r["score"]:.4f})")
 ```
 
-مثال 2: تحميل مجموعة البيانات
+### مثال 2: تحميل مجموعة البيانات
 
 ```python
 import json
 
-with open('DATA/raw/darija_corpus.json', 'r', encoding='utf-8') as f:
+with open("DATA/raw/darija_corpus.json", "r", encoding="utf-8") as f:
     data = json.load(f)
     
-samples = data['samples']
+samples = data["samples"]
 print(f"تم تحميل {len(samples)} عينة")
 
 # عرض أول عينة
 print(samples[0])
 ```
 
-مثال 3: تشغيل المصنف الأساسي
+### مثال 3: تشغيل المصنف الأساسي
 
 ```bash
 python scripts/train_baseline_v6.py
 ```
 
----
+## 🌐 المنصات والمرايا
 
-🌐 المنصات والمرايا
+| المنصة | الرابط | الدور |
+|----------|-----|------|
+| GitHub (رئيسي) | https://github.com/gitdeeper13/moroccan_nlp | الكود المصدري، المشكلات، طلبات السحب |
+| GitLab (مرآة) | https://gitlab.com/gitdeeper/moroccan-nlp | مرآة CI/CD |
+| Bitbucket (مرآة) | https://bitbucket.org/gitdeeper-13/moroccan_nlp | مرآة للمؤسسات |
+| Codeberg (مرآة) | https://codeberg.org/gitdeeper13/moroccan_nlp | مجتمع المصادر المفتوحة |
+| PyPI | https://pypi.org/project/moroccan-nlp/ | توزيع حزمة Python |
+| Zenodo | https://doi.org/10.5281/zenodo.21154423 | DOI، الورقة والبيانات |
+| OSF Project | https://osf.io/7szak | سجل المشروع البحثي |
+| OSF Preregistration | https://doi.org/10.17605/OSF.IO/SXGC6 | بروتوكول الدراسة المسجل مسبقاً |
+| الموقع | https://moroccan-nlp.netlify.app | التوثيق ولوحة المعلومات |
+| ORCID | https://orcid.org/0009-0003-8903-0029 | هوية الباحث |
+| أرشيف الإنترنت | https://archive.org/details/osf-registrations-moroccan-nlp | نسخة أرشيفية دائمة |
 
-المنصة الرابط الدور
-🐙 GitHub (رئيسي) github.com/gitdeeper13/moroccan_nlp الكود المصدري، المشكلات، طلبات السحب
-🦊 GitLab (مرآة) gitlab.com/gitdeeper/moroccan-nlp مرآة CI/CD
-🪣 Bitbucket (مرآة) bitbucket.org/gitdeeper-13/moroccan_nlp مرآة للمؤسسات
-🏔️ Codeberg (مرآة) codeberg.org/gitdeeper13/moroccan_nlp مجتمع المصادر المفتوحة
-📦 PyPI pypi.org/project/moroccan-nlp/ توزيع حزمة Python
-🔬 Zenodo doi.org/10.5281/zenodo.21154423 DOI، الورقة والبيانات
-📋 OSF Project osf.io/7szak سجل المشروع البحثي
-📝 OSF Preregistration doi.org/10.17605/OSF.IO/SXGC6 بروتوكول الدراسة المسجل مسبقاً
-🌐 الموقع moroccan-nlp.netlify.app التوثيق ولوحة المعلومات
-🧑‍🔬 ORCID orcid.org/0009-0003-8903-0029 هوية الباحث
-🗄️ أرشيف الإنترنت archive.org/details/osf-registrations-moroccan-nlp نسخة أرشيفية دائمة
+### صفحات الموقع الرسمية
 
-🌐 صفحات الموقع الرسمية
+| الصفحة | الرابط |
+|------|-----|
+| الصفحة الرئيسية | https://moroccan-nlp.netlify.app |
+| التوثيق | https://moroccan-nlp.netlify.app/documentation |
+| لوحة المعلومات | https://moroccan-nlp.netlify.app/dashboard |
+| التقارير | https://moroccan-nlp.netlify.app/reports |
 
-الصفحة الرابط
-الصفحة الرئيسية moroccan-nlp.netlify.app
-التوثيق moroccan-nlp.netlify.app/documentation
-لوحة المعلومات moroccan-nlp.netlify.app/dashboard
-التقارير moroccan-nlp.netlify.app/reports
+## 🔄 الاستنساخ والتحميل
 
----
-
-🔄 الاستنساخ والتحميل
-
-استنساخ Git
+### استنساخ Git
 
 ```bash
 # GitHub (رئيسي)
@@ -308,23 +285,22 @@ git clone https://bitbucket.org/gitdeeper-13/moroccan_nlp.git
 git clone https://codeberg.org/gitdeeper13/moroccan_nlp.git
 ```
 
-تحميل ZIP مباشر
+### تحميل ZIP مباشر
 
-المصدر الرابط
-GitHub moroccan_nlp-main.zip
-GitLab moroccan-nlp-main.zip
-Bitbucket moroccan_nlp-main.zip
-Codeberg moroccan_nlp-main.zip
-ملفات PyPI pypi.org/project/moroccan-nlp/#files
-سجل Zenodo doi.org/10.5281/zenodo.21154423
+| المصدر | الرابط |
+|--------|------|
+| GitHub | https://github.com/gitdeeper13/moroccan_nlp/archive/refs/heads/main.zip |
+| GitLab | https://gitlab.com/gitdeeper/moroccan-nlp/-/archive/main/moroccan-nlp-main.zip |
+| Bitbucket | https://bitbucket.org/gitdeeper-13/moroccan_nlp/get/main.zip |
+| Codeberg | https://codeberg.org/gitdeeper13/moroccan_nlp/archive/main.zip |
+| ملفات PyPI | https://pypi.org/project/moroccan-nlp/#files |
+| سجل Zenodo | https://doi.org/10.5281/zenodo.21154423 |
 
----
-
-📖 الاستشهاد
+## 📖 الاستشهاد
 
 إذا ساهم moroccan_nlp في بحثك، يرجى الاستشهاد باستخدام أحد التنسيقات التالية.
 
-📦 حزمة PyPI
+### حزمة PyPI
 
 ```bibtex
 @software{baladi2026moroccan_nlp_pypi,
@@ -338,7 +314,7 @@ Codeberg moroccan_nlp-main.zip
 }
 ```
 
-🔬 أرشيف Zenodo (الورقة والبيانات)
+### أرشيف Zenodo (الورقة والبيانات)
 
 ```bibtex
 @dataset{baladi2026moroccan_nlp_zenodo,
@@ -353,7 +329,7 @@ Codeberg moroccan_nlp-main.zip
 }
 ```
 
-📝 التسجيل المسبق OSF
+### التسجيل المسبق OSF
 
 ```bibtex
 @misc{baladi2026moroccan_nlp_osf,
@@ -367,7 +343,7 @@ Codeberg moroccan_nlp-main.zip
 }
 ```
 
-📄 الورقة البحثية
+### الورقة البحثية
 
 ```bibtex
 @article{baladi2026moroccan_nlp,
@@ -382,7 +358,7 @@ Codeberg moroccan_nlp-main.zip
 }
 ```
 
-DarijaBERT Paper
+### ورقة DarijaBERT
 
 ```bibtex
 @article{gaanoun2023darijabert,
@@ -392,13 +368,11 @@ DarijaBERT Paper
 }
 ```
 
-APA (مضمن)
+### APA (مضمن)
 
-Baladi, S. (2026). moroccan_nlp: Linguistic Resources and Models for Moroccan Darija and Arabic (Version 1.0.0, Series GITDEEPER LAB ZERO V6). Zenodo. https://doi.org/10.5281/zenodo.21154423
+> Baladi, S. (2026). *moroccan_nlp: Linguistic Resources and Models for Moroccan Darija and Arabic* (Version 1.0.0, Series GITDEEPER LAB ZERO V6). Zenodo. https://doi.org/10.5281/zenodo.21154423
 
----
-
-📜 الترخيص
+## 📜 الترخيص
 
 هذا المشروع مرخص بموجب رخصة MIT — انظر ملف LICENSE للتفاصيل.
 
@@ -412,31 +386,30 @@ Copyright (c) 2026 Samir Baladi
 مع الإشارة إلى حقوق النشر هذه في جميع النسخ أو الأجزاء الجوهرية من البرنامج.
 ```
 
----
-
-👤 المؤلف
+## 👤 المؤلف
 
 سمير بلادي
-باحث مستقل — معالجة اللغة الطبيعية، اللغويات الحاسوبية، والذكاء الاصطناعي للغات قليلة الموارد
+باحث متعدد التخصصات في مجال الذكاء الاصطناعي— معالجة اللغة الطبيعية، اللغويات الحاسوبية، والذكاء الاصطناعي للغات قليلة الموارد
 Ronin Institute / Rite of Renaissance
 
-جهة الاتصال الرابط
-📧 البريد الإلكتروني gitdeeper@gmail.com
-🧑‍🔬 ORCID 0009-0003-8903-0029
-🐙 GitHub github.com/gitdeeper13
-🔬 Zenodo doi.org/10.5281/zenodo.21154423
+| جهة الاتصال | الرابط |
+|---------|------|
+| البريد الإلكتروني | gitdeeper@gmail.com |
+| ORCID | https://orcid.org/0009-0003-8903-0029 |
+| GitHub | https://github.com/gitdeeper13 |
+| Zenodo | https://doi.org/10.5281/zenodo.21154423 |
 
 ---
 
 <div align="center">
 
-GITDEEPER LAB ZERO V6 · الإصدار 1.0.0 · يوليو 2026
+**GITDEEPER LAB ZERO V6 · الإصدار 1.0.0 · يوليو 2026**
 
-https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21154423-blue.svg
-https://img.shields.io/pypi/v/moroccan-nlp?color=1B4F72
-https://img.shields.io/badge/License-MIT-yellow.svg
-https://img.shields.io/badge/Domain-Natural%20Language%20Processing-1B4F72
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21154423-blue.svg)](https://doi.org/10.5281/zenodo.21154423)
+[![PyPI](https://img.shields.io/pypi/v/moroccan-nlp?color=1B4F72)](https://pypi.org/project/moroccan-nlp/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Domain](https://img.shields.io/badge/Domain-Natural%20Language%20Processing-1B4F72)](https://doi.org/10.5281/zenodo.21154423)
 
-"بناء الذكاء الاصطناعي المغربي، كلمة كلمة."
+*"بناء الذكاء الاصطناعي المغربي، كلمة كلمة."*
 
 </div>
