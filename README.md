@@ -423,7 +423,7 @@ all copies or substantial portions of the Software.
 👤 Author
 
 Samir Baladi
-Independent Researcher — Natural Language Processing, Computational Linguistics & AI for Under-Resourced Languages
+Interdisciplinary AI Researcher — Natural Language Processing, Computational Linguistics & AI for Under-Resourced Languages
 Ronin Institute / Rite of Renaissance
 
 Contact Link
