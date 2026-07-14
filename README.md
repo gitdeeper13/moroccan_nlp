@@ -105,6 +105,10 @@ print(results)
 - **Atlaset**: 1.13GB of Darija text
 - **GOUD.MA**: 50,000+ news articles
 
+## 🔧 Related Tools
+
+- **darija-tools**: Dependency-free Python utilities for Moroccan Darija text normalization and rule-based Arabizi-to-Arabic transliteration. https://github.com/Samielakkad/darija-tools
+
 ## 📈 Model Performance
 
 ### Baseline Classifier (v6)
